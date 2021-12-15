@@ -1,3 +1,5 @@
+from math import pi
+import re
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
@@ -5,30 +7,64 @@ from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import cross_val_score
 from sklearn import metrics
 import pandas as pd
+import numpy as np
 import jieba
+import jieba.posseg as pseg
+import math
 
 
 class nlp_model_trainging:
     def __init__(self) -> None:
+        jieba.set_dictionary('dict.txt.big')
+
         # load stop word
         with open("stopwords.txt", encoding='utf-8') as f:
             stopwords = f.read()
         self.custom_stopwords_list = [i for i in stopwords.split('\n')]
 
-    def __loadCorpusAndTransform(self, corpus='comment_zh_tw.csv'):
+        self.avoid_word_kind = (
+            'nr', 'nz', 'PER', 'f', 'ns', 'LOC', 's', 'nt', 'ORG', 't', 'nw', 'w', 'TIME')
+
+    def __loadCorpusAndTransform(self, corpus):
         # load corpus(data)
         df = pd.read_csv(corpus, on_bad_lines='skip', encoding='utf-8')
 
         # Feature Engineering, let label be binary
         # set feature and label
-        X = df["comment"].apply(lambda x:  " ".join(jieba.cut(str(x))))
-        y = df["star"].apply(lambda x: 1 if x > 3 else 0)
+        # X = df["comment"].apply(lambda x:  " ".join(
+        #     jieba.posseg.cut(str(x), use_paddle=True)))
+
+        X = self.__featureTransform(df["comment"])
+
+        # y = df["star"].apply(lambda x: 1 if x > 3 else 0)
+        y = df["star"]
+
+        df = pd.DataFrame([X, y])
+        df.to_excel('test.xlsx')
+
+        print(X.shape)
+        print(y.shape)
 
         # split dataset, random_state should only set in test
         return train_test_split(X, y, random_state=1)
 
-    def nlp_NB(self):
-        X_train, X_test, y_train, y_test = self.__loadCorpusAndTransform()
+    def __featureTransform(self, waitTransform):
+        trans = []
+        n = 1
+        for i in waitTransform:
+            print(f'\r{n}/{len(waitTransform)}', end='')
+            n += 1
+            pc = pseg.lcut(str(i), use_paddle=True)
+            temp = []
+            for j in pc:
+                if tuple(j)[1] not in self.avoid_word_kind:
+                    temp.append(tuple(j)[0])
+            trans.append(' '.join(temp))
+        return np.array(trans)
+
+    def nlp_NB(self, corpus):
+        X_train, X_test, y_train, y_test = self.__loadCorpusAndTransform(
+            corpus)
 
         # BoW transform
         max_df = 0.8  # too high prob to appear
@@ -52,8 +88,13 @@ class nlp_model_trainging:
                              cv=10, scoring='accuracy').mean()
 
         y_pred = pipe.predict(X_test)
-        print(pipe.predict(
-            ['10點半點的餐，12點還沒下單，這速度也是醉了。味道還可以，德國香腸沒有太好吃，焗土豆和檸檬雞還是推薦的。']))
+
+        tempX = ('10點半點的餐，12點還沒下單，這速度也是醉了。',
+                 '味道還可以', '德國香腸沒有太好吃', '焗土豆和檸檬雞還是推薦的。')
+        tex = self.__featureTransform(tempX)
+        print(tex)
+        te = pipe.predict(tex)
+        print(te)
 
         accuracy_score = metrics.accuracy_score(y_test, y_pred)
 
@@ -63,4 +104,9 @@ class nlp_model_trainging:
 
 
 if __name__ == "__main__":
-    nlp_model_trainging().nlp_NB()
+    pipe, cv, accuracy_score, confusion_matrix = nlp_model_trainging().nlp_NB(
+        corpus='comment_zh_tw.csv')
+    print(pipe)
+    print(cv)
+    print(accuracy_score)
+    print(confusion_matrix)
