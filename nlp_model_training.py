@@ -1,7 +1,5 @@
 from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import cross_val_score
 from sklearn import metrics
 import pandas as pd
@@ -13,7 +11,7 @@ class nlp_model_trainging(nlp_model_frame):
     def __init__(self) -> None:
         super().__init__()
 
-    def loadCorpusAndTransform(self, corpus, HMM=True, use_paddle=True):
+    def __loadCorpusAndTransform(self, corpus, HMM=True, use_paddle=True):
         # load corpus(data)
         df = pd.read_csv(corpus, on_bad_lines='skip', encoding='utf-8')
 
@@ -30,7 +28,8 @@ class nlp_model_trainging(nlp_model_frame):
 
         df = pd.DataFrame([X, y], index=["X", 'y']).T.dropna()
 
-        X = df["X"]
+        # BoW transform
+        X = self.vect.fit_transform(df["X"])
         y = df['y'].astype('category')
 
         print(X.shape)
@@ -40,36 +39,26 @@ class nlp_model_trainging(nlp_model_frame):
         return train_test_split(X, y)
 
     def nlp_NB(self, corpus, HMM=True, use_paddle=True):
-        X_train, X_test, y_train, y_test = self.loadCorpusAndTransform(
+        X_train, X_test, y_train, y_test = self.__loadCorpusAndTransform(
             corpus, HMM=HMM, use_paddle=use_paddle)
 
-        # BoW transform
-        max_df = 0.8  # too high prob to appear
-        min_df = 3  # too low prob to appear
-
-        vect = CountVectorizer(max_df=max_df,
-                               min_df=min_df,
-                               token_pattern=u'(?u)\\b[^\\d\\W]\\w+\\b',
-                               stop_words=frozenset(self.custom_stopwords_list))
-
-        # counts = pd.DataFrame(vect.fit_transform(X_train).toarray(),
-        #                       columns=vect.get_feature_names_out())
+        print(X_train.shape)
+        print(X_test.shape)
 
         nb = MultinomialNB()
-        pipe = make_pipeline(vect, nb)
 
-        pipe.fit(X_train, y_train)
+        nb.fit(X_train, y_train)
 
-        cv = cross_val_score(pipe, X_train, y_train,
-                             cv=10, scoring='accuracy').mean()
+        cv = cross_val_score(nb, X_train, y_train,
+                             cv=5, scoring='accuracy').mean()
 
-        y_pred = pipe.predict(X_test)
+        y_pred = nb.predict(X_test)
 
         accuracy_score = metrics.accuracy_score(y_test, y_pred)
 
         confusion_matrix = metrics.confusion_matrix(y_test, y_pred)
 
-        return pipe, cv, accuracy_score, confusion_matrix
+        return nb, cv, accuracy_score, confusion_matrix
 
 
 if __name__ == "__main__":
