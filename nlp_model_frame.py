@@ -18,7 +18,7 @@ class nlp_model_frame:
 
         self.vect = CountVectorizer()
 
-    def featureTransform(self, waitTransform, HMM=True, use_paddle=True):
+    def seg(self, waitTransform, HMM=True, use_paddle=True):
         jieba.set_dictionary('dict.txt.big')
         if use_paddle:
             paddle.enable_static()

@@ -6,10 +6,12 @@ class nlp_model_predict(nlp_model_frame):
     def __init__(self) -> None:
         super().__init__()
 
-    def nlp_NB(self, modelPath: str, predictList: list, h, u):
+    def nlp_NB(self, modelPath: str, vectPath: str, predictList: list, h, u):
         model = load(modelPath)
+        vect = load(vectPath)
 
-        tex = self.featureTransform(predictList, h, u)
+        tex = self.seg(predictList, h, u)
+        tex = vect.transform(tex)
 
         res = model.predict(tex)
 
@@ -19,11 +21,12 @@ class nlp_model_predict(nlp_model_frame):
 if __name__ == "__main__":
     nmp = nlp_model_predict()
     params = {
-        "modelPath": 'selfModel/(Best)nlp_NB_HMM_False_paddle_False.joblib',
+        "modelPath": 'nlpModel/(Best)nlp_NB_HMM_True_paddle_False.joblib',
+        "vectPath": 'nlpModel/nlp_vect_HMM_True_paddle_False.vect',
         "predictList": ["青椒好難吃", "番茄很棒"],
         "h": False,
         "u": False
     }
 
     tex, res = nmp.nlp_NB(**params)
-    print(tex, res)
+    print(params['predictList'], res)
