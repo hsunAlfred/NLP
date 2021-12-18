@@ -1,8 +1,8 @@
 from joblib import load
-from nlp_ml_frame import nlp_ml_frame
+from nlp_frame import nlp_frame
 
 
-class nlp_ml_predict(nlp_ml_frame):
+class nlp_ml_predict(nlp_frame):
     def __init__(self) -> None:
         super().__init__()
 
