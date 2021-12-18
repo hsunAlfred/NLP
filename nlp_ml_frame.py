@@ -5,7 +5,7 @@ import paddle
 from sklearn.feature_extraction.text import CountVectorizer
 
 
-class nlp_model_frame:
+class nlp_ml_frame:
     def __init__(self) -> None:
         # load stop word
         with open("stopwords.txt", encoding='utf-8') as f:

@@ -1,8 +1,8 @@
 from joblib import load
-from nlp_model_frame import nlp_model_frame
+from nlp_ml_frame import nlp_ml_frame
 
 
-class nlp_model_predict(nlp_model_frame):
+class nlp_ml_predict(nlp_ml_frame):
     def __init__(self) -> None:
         super().__init__()
 
@@ -19,7 +19,7 @@ class nlp_model_predict(nlp_model_frame):
 
 
 if __name__ == "__main__":
-    nmp = nlp_model_predict()
+    nmp = nlp_ml_predict()
     params = {
         "modelPath": 'nlpModel_NB/(Best)nlp_NB_HMM_True_paddle_False.joblib',
         "vectPath": 'nlpModel_NB/nlp_vect_HMM_True_paddle_False.vect',

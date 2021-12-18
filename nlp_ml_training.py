@@ -4,10 +4,10 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn import metrics
 import pandas as pd
 from joblib import dump
-from nlp_model_frame import nlp_model_frame
+from nlp_ml_frame import nlp_ml_frame
 
 
-class nlp_model_training(nlp_model_frame):
+class nlp_model_training(nlp_ml_frame):
     def __init__(self) -> None:
         super().__init__()
 
@@ -69,7 +69,7 @@ class nlp_model_training(nlp_model_frame):
 if __name__ == "__main__":
     res = ''
     for h, u in [(True, True), (True, False), (False, True), (False, False)]:
-        nmt = nlp_model_training()
+        nmt = nlp_ml_frame()
         nb, cv, accuracy_score, confusion_matrix = nmt.nlp_NB(
             corpus='comment_zh_tw.csv', HMM=h, use_paddle=u)
 
