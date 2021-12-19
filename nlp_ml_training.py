@@ -1,6 +1,7 @@
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
-from sklearn.naive_bayes import MultinomialNB
+from sklearn.naive_bayes import GaussianNB
+# from sklearn.naive_bayes import MultinomialNB
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
 import pandas as pd
@@ -48,7 +49,7 @@ class nlp_model_training(nlp_frame):
         X_train, X_test, y_train, y_test = self.__loadCorpusAndTransform(
             corpus, HMM=HMM, use_paddle=use_paddle)
 
-        nb = MultinomialNB()
+        nb = GaussianNB()
 
         nb.fit(X_train, y_train)
 
@@ -121,6 +122,6 @@ def rf_call():
 
 
 if __name__ == "__main__":
-    # nb_call()
+    nb_call()
 
-    rf_call()
+    # rf_call()
