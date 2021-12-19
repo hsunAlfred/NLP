@@ -1,6 +1,7 @@
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
 import pandas as pd
 from joblib import dump
@@ -47,9 +48,6 @@ class nlp_model_training(nlp_frame):
         X_train, X_test, y_train, y_test = self.__loadCorpusAndTransform(
             corpus, HMM=HMM, use_paddle=use_paddle)
 
-        print(X_train.shape)
-        print(X_test.shape)
-
         nb = MultinomialNB()
 
         nb.fit(X_train, y_train)
@@ -65,8 +63,26 @@ class nlp_model_training(nlp_frame):
 
         return nb, cv, accuracy_score, confusion_matrix
 
+    def nlp_RF(self, corpus: str, HMM: bool, use_paddle: bool):
+        X_train, X_test, y_train, y_test = self.__loadCorpusAndTransform(
+            corpus, HMM=HMM, use_paddle=use_paddle)
 
-if __name__ == "__main__":
+        rf = RandomForestClassifier(max_depth=2, random_state=0)
+        rf.fit(X_train, y_train)
+
+        cv = cross_val_score(rf, X_train, y_train,
+                             cv=5, scoring='accuracy').mean()
+
+        y_pred = rf.predict(X_test)
+
+        accuracy_score = metrics.accuracy_score(y_test, y_pred)
+
+        confusion_matrix = metrics.confusion_matrix(y_test, y_pred)
+
+        return rf, cv, accuracy_score, confusion_matrix
+
+
+def nb_call():
     res = ''
     for h, u in [(True, True), (True, False), (False, True), (False, False)]:
         nmt = nlp_model_training()
@@ -83,3 +99,28 @@ if __name__ == "__main__":
     print(res)
     with open('nlp_NB_score.txt', 'w') as f:
         f.write(res)
+
+
+def rf_call():
+    res = ''
+    for h, u in [(True, True), (True, False), (False, True), (False, False)]:
+        nmt = nlp_model_training()
+        rf, cv, accuracy_score, confusion_matrix = nmt.nlp_RF(
+            corpus='comment_zh_tw.csv', HMM=h, use_paddle=u)
+
+        dump(rf, f'nlpModel_RF/nlp_RF_HMM_{h}_paddle_{u}.joblib')
+        dump(nmt.vect, f'nlpModel_RF/nlp_vect_HMM_{h}_paddle_{u}.vect')
+
+        res += f'\n\nHMM_{h}_paddle_{u}'
+        res += (
+            f'\ncross value:{cv:.3f}\naccuracy score:{accuracy_score:.3f}\nconfusion matrix\n{confusion_matrix}')
+
+    print(res)
+    with open('nlp_RF_score.txt', 'w') as f:
+        f.write(res)
+
+
+if __name__ == "__main__":
+    # nb_call()
+
+    rf_call()

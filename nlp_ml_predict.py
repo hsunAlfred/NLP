@@ -17,6 +17,17 @@ class nlp_ml_predict(nlp_frame):
 
         return tex, res
 
+    def nlp_RF(self, modelPath: str, vectPath: str, predictList: list, h: bool, u: bool):
+        model = load(modelPath)
+        vect = load(vectPath)
+
+        tex = self.seg(predictList, h, u)
+        tex = vect.transform(tex)
+
+        res = model.predict(tex)
+
+        return tex, res
+
 
 if __name__ == "__main__":
     nmp = nlp_ml_predict()
