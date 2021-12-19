@@ -63,8 +63,7 @@ class nlp_dl_training(nlp_frame):
 
         return model, nclasses, evaluate_loss, logits, pred, ty_test
 
-    def nlp_Bert_Predict(self, model, nclasses, HMM, use_paddle):
-        predictList = ["青椒難吃", "番茄好吃"]
+    def nlp_Bert_Predict(self, model, nclasses, predictList, HMM, use_paddle):
         predictList = self.seg(
             predictList, HMM=HMM, use_paddle=use_paddle)
         tx_pred, ty = self.transTensor(
@@ -91,6 +90,7 @@ if __name__ == "__main__":
     params = {
         "model": model,
         "nclasses": nclasses,
+        "predictList": ["青椒難吃", "番茄好吃"],
         "HMM": True,
         "use_paddle": False
     }
