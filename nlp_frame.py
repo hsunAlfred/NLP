@@ -18,7 +18,7 @@ class nlp_frame:
         #self.avoid_word_kind = ('w')
         self.avoid_word_kind = ()
 
-        self.vect = HashingVectorizer(n_features=2**15)
+        self.vect = HashingVectorizer(n_features=2**10)
 
     def seg(self, waitTransform, HMM=True, use_paddle=True):
         jieba.set_dictionary('dict.txt.big')
