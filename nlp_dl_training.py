@@ -9,8 +9,90 @@ from sklearn.model_selection import train_test_split
 class nlp_dl_training(nlp_frame):
     def __init__(self) -> None:
         super().__init__()
+        self.X_tokenizer = None
 
-    def nlp_Bert_Build(self, corpus, HMM: bool, use_paddle: bool, epochs: int):
+    def __transTensor(self, nclasses, X_train, y_train=None, X_test=None, y_test=None):
+        # ------------------train data------------------------------
+        X_temp = tf.constant([tuple(X_train)])
+        tX_train = tf.transpose(X_temp)
+
+        try:
+            if y_train.empty:
+                print(tX_train.shape)
+                return tX_train
+        except:
+            if y_train == None:
+                print(tX_train.shape)
+                return tX_train
+
+        # 轉換為類別變數
+        ty_train = tf.constant(tf.keras.utils.to_categorical(
+            y_train, nclasses))
+
+        print(tX_train.shape, ty_train.shape)
+
+        # ------------------test data------------------------------
+        X_temp = tf.constant([tuple(X_test)])
+        tX_test = tf.transpose(X_temp)
+
+        # 轉換為類別變數
+        ty_test = tf.constant(tf.keras.utils.to_categorical(
+            y_test, nclasses))
+
+        print(tX_test.shape, ty_test.shape)
+
+        return tX_train, tX_test, ty_train, ty_test
+
+    def __transTensor2(self, nclasses, X_train, y_train=None, X_test=None, y_test=None):
+        try:
+            if X_test.empty:
+                corpus = pd.concat([X_train])
+        except:
+            if X_test == None:
+                corpus = pd.concat([X_train])
+        else:
+            corpus = pd.concat([X_train, X_test])
+
+        # ------------------train data------------------------------
+        if self.X_tokenizer == None:
+            self.X_tokenizer = tf.keras \
+                .preprocessing \
+                .text \
+                .Tokenizer(num_words=10000) \
+                .fit_on_texts(corpus)
+
+        X_train_token = self.X_tokenizer.texts_to_sequences(X_train)
+
+        max_seq_len = max([len(seq) for seq in self.X_tokenizer])
+        tX_train = tf.keras.preprocessing \
+            .sequence \
+            .pad_sequences(X_train_token, maxlen=max_seq_len)
+
+        if y_train.empty:
+            print(tX_train.shape)
+            return tX_train
+
+        # 轉換為類別變數
+        ty_train = tf.constant(tf.keras.utils.to_categorical(
+            y_train, nclasses))
+
+        print(tX_train.shape, ty_train.shape)
+
+        # ------------------test data------------------------------
+        X_test_token = self.X_tokenizer.texts_to_sequences(X_test)
+        tX_test = tf.keras.preprocessing \
+            .sequence \
+            .pad_sequences(X_test_token, maxlen=max_seq_len)
+
+        # 轉換為類別變數
+        ty_test = tf.constant(tf.keras.utils.to_categorical(
+            y_test, nclasses))
+
+        print(tX_test.shape, ty_test.shape)
+
+        return tX_train, tX_test, ty_train, ty_test
+
+    def __loadCorpusAndTransform(self, corpus: str, HMM: bool, use_paddle: bool):
         # load corpus(data)
         df = pd.read_csv(corpus, on_bad_lines='skip', encoding='utf-8')
 
@@ -31,13 +113,16 @@ class nlp_dl_training(nlp_frame):
         print(X_train.shape, y_train.shape)
         print(X_test.shape, y_test.shape)
 
+        return X_train, X_test, y_train, y_test, nclasses
+
+    def nlp_Bert_Build(self, corpus, HMM: bool, use_paddle: bool, epochs: int):
+        X_train, X_test, y_train, y_test, nclasses = \
+            self.__loadCorpusAndTransform(corpus, HMM, use_paddle)
+
         # transform to tensor
         # x.shape, y.shape must to be (n, 1) (n, classes)
-        tX_train, ty_train = self.transTensor(
-            X_train, y_train, nclasses)
-
-        tX_test, ty_test = self.transTensor(
-            X_test, y_test, nclasses)
+        tX_train, tX_test, ty_train, ty_test = self.__transTensor(
+            nclasses, X_train, y_train, X_test, y_test)
 
         bert = hub.KerasLayer(
             'nlpModel_BERT/albert_large',
@@ -66,12 +151,20 @@ class nlp_dl_training(nlp_frame):
     def nlp_Bert_Predict(self, model, nclasses, predictList, HMM, use_paddle):
         predictList = self.seg(
             predictList, HMM=HMM, use_paddle=use_paddle)
-        tx_pred, ty = self.transTensor(
-            predictList, [0, 4], nclasses)
-        logits = model.predict(tx_pred)
-        pred = logits.argmax()
 
-        return logits, pred, ty
+        par = {
+            "nclasses": nclasses,
+            "X_train": predictList,
+            "y_train": None,
+            "X_test": None,
+            "y_test": None
+        }
+
+        tx_pred = self.__transTensor(**par)
+        logits = model.predict(tx_pred)
+        pred = logits.argmax(-1).tolist()
+
+        return logits, pred
 
 
 if __name__ == "__main__":
@@ -83,7 +176,7 @@ if __name__ == "__main__":
         "use_paddle": False,
         "epochs": 1
     }
-    model, nclasses, evaluate_loss, logits, pred, ty_test = \
+    model, nclasses, evaluate_loss, logits, pred, ty_test =\
         ndt.nlp_Bert_Build(**params)
     print(f'evaluate\n{evaluate_loss}\n')
 
@@ -94,7 +187,7 @@ if __name__ == "__main__":
         "HMM": True,
         "use_paddle": False
     }
-    logits, pred, ty = ndt.nlp_Bert_Predict(**params)
+    logits, pred = ndt.nlp_Bert_Predict(**params)
     print(f'logits\n{logits}\n')
     print(f'predict\n{pred}\n')
 
