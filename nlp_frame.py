@@ -2,8 +2,6 @@ import jieba
 import jieba.posseg as pseg
 import numpy as np
 import paddle
-# from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import HashingVectorizer
 
 
 class nlp_frame:
@@ -17,8 +15,6 @@ class nlp_frame:
         #     'nr', 'PER', 'ns', 'LOC', 's', 'nt', 'ORG', 'nw', 'w', 'TIME')
         #self.avoid_word_kind = ('w')
         self.avoid_word_kind = ()
-
-        self.vect = HashingVectorizer(n_features=2**10)
 
     def seg(self, waitTransform, HMM=True, use_paddle=True):
         jieba.set_dictionary('dict.txt.big')
