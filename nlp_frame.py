@@ -38,3 +38,14 @@ class nlp_frame:
             trans.append(' '.join(temp))
 
         return np.array(trans)
+
+    def transTensor(self, x, y, nclasses):
+        import tensorflow as tf
+        tx = tf.constant([tuple(x)])
+        tx = tf.transpose(tx)
+
+        # 轉換為類別變數
+        ty = tf.constant(tf.keras.utils.to_categorical(
+            y, nclasses))
+        print(tx.shape, ty.shape)
+        return tx, ty

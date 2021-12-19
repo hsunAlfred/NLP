@@ -11,7 +11,7 @@ class nlp_model_training(nlp_frame):
     def __init__(self) -> None:
         super().__init__()
 
-    def __loadCorpusAndTransform(self, corpus, HMM=True, use_paddle=True):
+    def __loadCorpusAndTransform(self, corpus: str, HMM: bool, use_paddle: bool):
         # load corpus(data)
         df = pd.read_csv(corpus, on_bad_lines='skip', encoding='utf-8')
 
@@ -43,7 +43,7 @@ class nlp_model_training(nlp_frame):
     def __w2vTransform(self, source):
         pass
 
-    def nlp_NB(self, corpus, HMM=True, use_paddle=True):
+    def nlp_NB(self, corpus: str, HMM: bool, use_paddle: bool):
         X_train, X_test, y_train, y_test = self.__loadCorpusAndTransform(
             corpus, HMM=HMM, use_paddle=use_paddle)
 

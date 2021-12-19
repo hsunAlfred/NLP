@@ -6,7 +6,7 @@ class nlp_ml_predict(nlp_frame):
     def __init__(self) -> None:
         super().__init__()
 
-    def nlp_NB(self, modelPath: str, vectPath: str, predictList: list, h, u):
+    def nlp_NB(self, modelPath: str, vectPath: str, predictList: list, h: bool, u: bool):
         model = load(modelPath)
         vect = load(vectPath)
 
