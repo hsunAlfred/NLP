@@ -7,7 +7,7 @@ import paddle
 class nlp_frame:
     def __init__(self) -> None:
         # load stop word
-        with open("stopwords.txt", encoding='utf-8') as f:
+        with open("./corpus_words/stopwords.txt", encoding='utf-8') as f:
             stopwords = f.read()
         self.custom_stopwords_list = [i for i in stopwords.split('\n')]
 
@@ -17,7 +17,7 @@ class nlp_frame:
         self.avoid_word_kind = ()
 
     def seg(self, waitTransform, HMM=True, use_paddle=True):
-        jieba.set_dictionary('dict.txt.big')
+        jieba.set_dictionary('./corpus_words/dict.txt.big')
         if use_paddle:
             paddle.enable_static()
             jieba.enable_paddle()
