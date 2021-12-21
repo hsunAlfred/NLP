@@ -174,7 +174,7 @@ if __name__ == "__main__":
         "corpus": 'comment_zh_tw.csv',
         "HMM": True,
         "use_paddle": False,
-        "epochs": 1
+        "epochs": 500
     }
     model, nclasses, evaluate_loss, logits, pred, ty_test =\
         ndt.nlp_Bert_Build(**params)
