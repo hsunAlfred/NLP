@@ -144,7 +144,7 @@ class nlp_dl_training(nlp_frame):
         evaluate_loss = model.evaluate(
             tX_test, ty_test, batch_size=100, verbose=2)
         logits = model.predict(tX_test)
-        pred = logits.argmax()
+        pred = logits.argmax(-1).tolist()
 
         return model, nclasses, evaluate_loss, logits, pred, ty_test
 
