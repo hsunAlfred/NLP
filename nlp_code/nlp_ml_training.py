@@ -1,3 +1,4 @@
+from numpy import uint
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
 # from sklearn.naive_bayes import GaussianNB
@@ -10,13 +11,14 @@ from nlp_frame import nlp_frame
 from sklearn.feature_extraction.text import CountVectorizer
 # from sklearn.feature_extraction.text import HashingVectorizer
 import time
+import pathlib
 
 
 class nlp_model_training(nlp_frame):
     def __init__(self, vectParams: dict, segParams: dict, modelSelect: str, modelParams: dict) -> None:
         '''"vectParams":dict
         {
-            "analyzer":str word | char | char_wb,
+            "analyzer":str "word" | "char" | "char_wb",
             "max_df":float [0.0, 1.0],
             "min_df":float [0.0, 1.0],
             "binary":bool
@@ -60,18 +62,23 @@ class nlp_model_training(nlp_frame):
     def __loadCorpusAndTransform(self, corpus: str, HMM: bool, use_paddle: bool):
         # load corpus(data)
         # df = pd.read_csv(corpus, on_bad_lines='skip', encoding='utf-8')
-        df = pd.read_excel(corpus)
+        if pathlib.Path(f'./corpus_words/seg_{HMM}_{use_paddle}.xlsx').exists():
+            df = pd.read_excel(
+                f'./corpus_words/seg_{HMM}_{use_paddle}.xlsx', usecols=['X', 'y']).dropna()
+        else:
+            df = pd.read_excel(corpus)
 
-        # Feature Engineering(feature to seg, label to category)
+            # Feature Engineering(feature to seg, label to category)
 
-        X = self.seg(
-            df["comment"], HMM=HMM, use_paddle=use_paddle)
+            X = self.seg(
+                df["comment"], HMM=HMM, use_paddle=use_paddle)
 
-        # y = df["star"]
-        y = df["rate"]
+            # y = df["star"]
+            y = df["rate"]
 
-        df = pd.DataFrame([X, y], index=["X", 'y']).T.dropna()
+            df = pd.DataFrame([X, y], index=["X", 'y']).T.dropna()
 
+            df.to_excel(f'./corpus_words/seg_{HMM}_{use_paddle}.xlsx')
         # BoW transform
         # -----------------------------------
         X = self.vect.fit_transform(df["X"]).toarray()
@@ -88,6 +95,9 @@ class nlp_model_training(nlp_frame):
     def training(self):
         X_train, X_test, y_train, y_test = self.__loadCorpusAndTransform(
             **self.segParams)
+
+        print(f'train dataset shape:{X_train.shape} {y_train.shape}')
+        print(f'test  dataset shape:{X_test.shape} {y_test.shape}')
 
         model = None
         if self.modelSelect == "NB":
@@ -110,53 +120,72 @@ class nlp_model_training(nlp_frame):
         return model, cv, accuracy_score, confusion_matrix
 
 
-def ml_call(vectParams, segParams, modelSelect, modelParams):
+def ml_call(vectParams, segParams, modelSelect, modelParams, resultTimestamp):
     nmt = nlp_model_training(vectParams, segParams, modelSelect, modelParams)
     model, cv, accuracy_score, confusion_matrix = nmt.training()
-
-    resultTimestamp = f"{time.time()}"
 
     dump(
         model, f'nlpModel_{modelSelect}/{resultTimestamp}.joblib')
     dump(
         nmt.vect, f'nlpModel_{modelSelect}/vect_{resultTimestamp}.vect')
 
+    temp = f"\n{resultTimestamp}\n{vectParams}\n{segParams}\n{modelSelect}\n{modelParams}\n" +\
+        "-------------------------------------------------------------\n"
     with open(f"./info/{modelSelect}_parameters.txt", mode="a", encoding="utf-8") as f:
-        f.write(
-            f"\n{resultTimestamp}\n{vectParams}\n{segParams}\n{modelSelect}\n{modelParams}\n" +
-            "-------------------------------------------------------------\n")
+        f.write(temp)
+    print(temp)
 
-    res = f"\n{resultTimestamp}\ncross value:{cv:.3f}\naccuracy score:{accuracy_score:.3f}\n" +\
+    temp = f"\n{resultTimestamp}\ncross value:{cv:.3f}\naccuracy score:{accuracy_score:.3f}\n" +\
         f"confusion matrix\n{confusion_matrix}\n" +\
         "-------------------------------------------------------------\n"
 
     with open(f"./info/{modelSelect}_modelScore.txt", 'a', encoding="utf-8") as f:
-        f.write(res)
-    print(res)
+        f.write(temp)
+    print(temp)
 
 
 if __name__ == "__main__":
     # max_df min_df -> float in range [0.0, 1.0]
-    vectParams = {
-        "analyzer": "word",
-        "max_df": 1.0,
-        "min_df": 1,
-        "binary": False
-    }
+    nn = 1
+    for ste in range(1, 11):
+        for ma in range(ste, 11):
+            for mi in range(ma-ste, 11):
+                for h, u in ((True, True), (True, False), (False, True), (False, False)):
+                    for b in (True, False):
+                        for fp in (True, False):
+                            for a in ("word", "char", "char_wb"):
+                                try:
+                                    print(
+                                        f'***************iteration:{nn}***************')
+                                    resultTimestamp = f"{time.time()}"
 
-    segParams = {
-        "corpus": "./corpus_words/corpus.xlsx",
-        "HMM": True,
-        "use_paddle": False
-    }
+                                    vectParams = {
+                                        "analyzer": a,
+                                        "max_df": ma/10,
+                                        "min_df": mi/10,
+                                        "binary": b
+                                    }
 
-    modelSelect = "NB"
+                                    segParams = {
+                                        "corpus": "./corpus_words/corpus.xlsx",
+                                        "HMM": h,
+                                        "use_paddle": u
+                                    }
 
-    # alpha:Additive (Laplace/Lidstone) smoothing parameter(0 for no smoothing).
-    # "fit_prior": bool, default = True Whether to learn class prior probabilities or not. If false, a uniform prior will be used.
-    modelParams = {
-        "alpha": 1.0,
-        "fit_prior": True
-    }
+                                    modelSelect = "NB"
 
-    ml_call(vectParams, segParams, modelSelect, modelParams)
+                                    # alpha:Additive (Laplace/Lidstone) smoothing parameter(0 for no smoothing).
+                                    # "fit_prior": bool, default = True Whether to learn class prior probabilities or not. If false, a uniform prior will be used.
+                                    modelParams = {
+                                        "alpha": 1.0,
+                                        "fit_prior": fp
+                                    }
+
+                                    ml_call(vectParams, segParams,
+                                            modelSelect, modelParams, resultTimestamp)
+                                except Exception as e:
+                                    temp = f'\n{nn}\n{e}\n{resultTimestamp}\n{vectParams}\n{segParams}\n{modelSelect}\n{modelParams}'
+                                    with open('./info/err.txt', 'a', encoding='utf-8') as f:
+                                        f.write(temp)
+                                    print(temp)
+                                nn += 1
