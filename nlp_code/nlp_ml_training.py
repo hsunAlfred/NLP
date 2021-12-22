@@ -79,8 +79,8 @@ class nlp_model_training(nlp_frame):
             df = pd.DataFrame([X, y], index=["X", 'y']).T.dropna()
 
             df.to_excel(
-
                 f'./corpus_words/seg_{HMM}_{use_paddle}.xlsx', index=False)
+
             df = pd.read_excel(
                 f'./corpus_words/seg_{HMM}_{use_paddle}.xlsx', usecols=['X', 'y'])
         # BoW transform
