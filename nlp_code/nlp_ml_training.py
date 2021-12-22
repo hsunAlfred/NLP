@@ -64,7 +64,7 @@ class nlp_model_training(nlp_frame):
         # df = pd.read_csv(corpus, on_bad_lines='skip', encoding='utf-8')
         if pathlib.Path(f'./corpus_words/seg_{HMM}_{use_paddle}.xlsx').exists():
             df = pd.read_excel(
-                f'./corpus_words/seg_{HMM}_{use_paddle}.xlsx', usecols=['X', 'y'])
+                f'./corpus_words/seg_{HMM}_{use_paddle}.xlsx', usecols=['X', 'y']).dropna()
         else:
             df = pd.read_excel(corpus)
 
@@ -82,7 +82,7 @@ class nlp_model_training(nlp_frame):
                 f'./corpus_words/seg_{HMM}_{use_paddle}.xlsx', index=False)
 
             df = pd.read_excel(
-                f'./corpus_words/seg_{HMM}_{use_paddle}.xlsx', usecols=['X', 'y'])
+                f'./corpus_words/seg_{HMM}_{use_paddle}.xlsx', usecols=['X', 'y']).dropna()
         # BoW transform
         # -----------------------------------
         X = self.vect.fit_transform(df["X"]).toarray()
