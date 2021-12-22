@@ -60,11 +60,13 @@ class nlp_model_training(nlp_frame):
         # self.vect = HashingVectorizer(n_features=2**n)
 
     def __loadCorpusAndTransform(self, corpus: str, HMM: bool, use_paddle: bool):
+        corpusTarget = corpus.split('/')[1].split('.')[0]
+
         # load corpus(data)
         # df = pd.read_csv(corpus, on_bad_lines='skip', encoding='utf-8')
-        if pathlib.Path(f'./corpus_words/seg_{HMM}_{use_paddle}.xlsx').exists():
+        if pathlib.Path(f'./corpus_words/seg_{corpusTarget}_{HMM}_{use_paddle}.xlsx').exists():
             df = pd.read_excel(
-                f'./corpus_words/seg_{HMM}_{use_paddle}.xlsx', usecols=['X', 'y']).dropna()
+                f'./corpus_words/seg_{corpusTarget}_{HMM}_{use_paddle}.xlsx', usecols=['X', 'y']).dropna()
         else:
             df = pd.read_excel(corpus)
 
@@ -79,10 +81,10 @@ class nlp_model_training(nlp_frame):
             df = pd.DataFrame([X, y], index=["X", 'y']).T.dropna()
 
             df.to_excel(
-                f'./corpus_words/seg_{HMM}_{use_paddle}.xlsx', index=False)
+                f'./corpus_words/seg_{corpusTarget}_{HMM}_{use_paddle}.xlsx', index=False)
 
             df = pd.read_excel(
-                f'./corpus_words/seg_{HMM}_{use_paddle}.xlsx', usecols=['X', 'y']).dropna()
+                f'./corpus_words/seg_{corpusTarget}_{HMM}_{use_paddle}.xlsx', usecols=['X', 'y']).dropna()
         # BoW transform
         # -----------------------------------
         X = self.vect.fit_transform(df["X"]).toarray()
@@ -153,7 +155,7 @@ if __name__ == "__main__":
     nn = 1
     for ste in range(1, 11):
         for ma in range(ste, 11):
-            for mi in range(ma-ste, 11):
+            for mi in range(ma-ste, ma+1):
                 for h, u in ((True, True), (True, False), (False, True), (False, False)):
                     for b in (True, False):
                         for fp in (True, False):
@@ -171,7 +173,7 @@ if __name__ == "__main__":
                                     }
 
                                     segParams = {
-                                        "corpus": "./corpus_words/corpus.xlsx",
+                                        "corpus": "./corpus_words/corpus_new.xlsx",
                                         "HMM": h,
                                         "use_paddle": u
                                     }
