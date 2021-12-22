@@ -1,7 +1,0 @@
-
-1640150083.188113
-{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.0, 'binary': True}
-{'corpus': './corpus_words/corpus.xlsx', 'HMM': True, 'use_paddle': True}
-NB
-{'alpha': 1.0, 'fit_prior': True}
--------------------------------------------------------------
