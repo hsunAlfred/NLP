@@ -35,3 +35,12 @@ class nlp_frame:
             trans.append(' '.join(temp))
 
         return np.array(trans)
+
+    @staticmethod
+    def toThreeClass(x):
+        if x >= 4:
+            return 3
+        elif x == 3:
+            return 2
+        else:
+            return 1

@@ -42,11 +42,11 @@ class nlp_model_training(nlp_frame):
             "n_estimators":int, default=100
             "criterion":str "gini" | "entropy" default=”gini”
             "min_samples_split":int or float, default=2
-            "min_samples_leafint" or float, default=1
+            "min_samples_leaf"int or float, default=1
             "max_features":str "auto", "sqrt", "log2"
             "bootstrap":bool, default=True
             "oob_scorebool": bool, default=False, Only available if bootstrap=True.
-            "class_weight":{“balanced”, “balanced_subsample”} [{0: 1, 1: 1}, {0: 1, 1: 5}, {0: 1, 1: 1}, {0: 1, 1: 1}]
+            "class_weight":default=None, {“balanced”, “balanced_subsample”} [{0: 1, 1: 1}, {0: 1, 1: 5}, {0: 1, 1: 1}, {0: 1, 1: 1}]
         }
         '''
         super().__init__()
@@ -76,7 +76,7 @@ class nlp_model_training(nlp_frame):
                 df["comment"], HMM=HMM, use_paddle=use_paddle)
 
             # y = df["star"]
-            y = df["rate"]
+            y = df["rate"].apply(nlp_frame.toThreeClass)
 
             df = pd.DataFrame([X, y], index=["X", 'y']).T.dropna()
 
@@ -207,44 +207,56 @@ if __name__ == "__main__":
                         for b in (True, False):
                             for a in ("word", "char", "char_wb"):
                                 for n_estimators in range(5, 101, 5):
-                                    try:
-                                        print(
-                                            f'***************iteration:{nn}***************')
-                                        resultTimestamp = f"{time.time()}"
+                                    for criterion in ("gini", "entropy"):
+                                        for min_samples_split in range(2, 10):
+                                            for min_samples_leafint in range(1, 10):
+                                                for max_features in ("auto", "sqrt", "log2"):
+                                                    for bootstrap, oob_scorebool, in ((True, True), (True, False), (False, False)):
+                                                        for max_samples in range(1, 11):
+                                                            for class_weight in (
+                                                                    {1: 14, 2: 15,
+                                                                     3: 9, 4: 3, 5: 2},
+                                                                    None, 'balanced', 'balanced_subsample'):
+                                                                try:
+                                                                    print(
+                                                                        f'***************iteration:{nn}***************')
+                                                                    resultTimestamp = f"{time.time()}"
 
-                                        vectParams = {
-                                            "analyzer": a,
-                                            "max_df": ma/10,
-                                            "min_df": mi/10,
-                                            "binary": b
-                                        }
+                                                                    vectParams = {
+                                                                        "analyzer": a,
+                                                                        "max_df": ma/10,
+                                                                        "min_df": mi/10,
+                                                                        "binary": b
+                                                                    }
 
-                                        segParams = {
-                                            "corpus": corp,
-                                            "HMM": h,
-                                            "use_paddle": u
-                                        }
+                                                                    segParams = {
+                                                                        "corpus": corp,
+                                                                        "HMM": h,
+                                                                        "use_paddle": u
+                                                                    }
 
-                                        modelSelect = "NB"
+                                                                    modelSelect = "RF"
 
-                                        # alpha:Additive (Laplace/Lidstone) smoothing parameter(0 for no smoothing).
-                                        # "fit_prior": bool, default = True Whether to learn class prior probabilities or not. If false, a uniform prior will be used.
-                                        modelParams = {
-                                            "n_estimators": n_estimators,
-                                            "criterion": str "gini" | "entropy" default =”gini”
-                                            "min_samples_split": int or float, default = 2
-                                            "min_samples_leafint" or float, default = 1
-                                            "max_features": str "auto", "sqrt", "log2"
-                                            "bootstrap": bool, default = True
-                                            "oob_scorebool": bool, default = False, Only available if bootstrap = True.
-                                            "class_weight": {“balanced”, “balanced_subsample”}[{0: 1, 1: 1}, {0: 1, 1: 5}, {0: 1, 1: 1}, {0: 1, 1: 1}]
-                                        }
+                                                                    # alpha:Additive (Laplace/Lidstone) smoothing parameter(0 for no smoothing).
+                                                                    # "fit_prior": bool, default = True Whether to learn class prior probabilities or not. If false, a uniform prior will be used.
+                                                                    modelParams = {
+                                                                        "n_estimators": n_estimators,
+                                                                        "criterion": criterion,
+                                                                        "min_samples_split": min_samples_split,
+                                                                        "min_samples_leaf": min_samples_leafint,
+                                                                        "max_features": max_features,
+                                                                        "bootstrap": bootstrap,
+                                                                        "oob_score": oob_scorebool,
+                                                                        "max_samples": max_samples/10,
+                                                                        "class_weight": class_weight
+                                                                    }
 
-                                        ml_call(vectParams, segParams,
-                                                modelSelect, modelParams, resultTimestamp)
-                                    except Exception as e:
-                                        temp = f'\n{nn}\n{e}\n{resultTimestamp}\n{vectParams}\n{segParams}\n{modelSelect}\n{modelParams}'
-                                        with open('./info/err.txt', 'a', encoding='utf-8') as f:
-                                            f.write(temp)
-                                        print(temp)
-                                    nn += 1
+                                                                    ml_call(vectParams, segParams,
+                                                                            modelSelect, modelParams, resultTimestamp)
+                                                                except Exception as e:
+                                                                    temp = f'\n{nn}\n{e}\n{resultTimestamp}\n{vectParams}\n{segParams}\n{modelSelect}\n{modelParams}'
+                                                                    with open('./info/err.txt', 'a', encoding='utf-8') as f:
+                                                                        f.write(
+                                                                            temp)
+                                                                    print(temp)
+                                                                nn += 1
