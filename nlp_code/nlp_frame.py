@@ -38,7 +38,7 @@ class nlp_frame:
 
     @staticmethod
     def toThreeClass(x):
-        if x >= 4:
+        if x > + 4:
             return 3
         elif x == 3:
             return 2

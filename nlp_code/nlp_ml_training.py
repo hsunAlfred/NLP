@@ -76,7 +76,7 @@ class nlp_model_training(nlp_frame):
                 df["comment"], HMM=HMM, use_paddle=use_paddle)
 
             # y = df["star"]
-            y = df["rate"].apply(nlp_frame.toThreeClass)
+            y = df["rate"]  # .apply(nlp_frame.toThreeClass)
 
             df = pd.DataFrame([X, y], index=["X", 'y']).T.dropna()
 
@@ -96,13 +96,21 @@ class nlp_model_training(nlp_frame):
         print(f"\n{X.shape}\n{y.shape}")
 
         # split dataset, random_state should only set in test
-        return train_test_split(X, y, train_size=0.8)
+        X_v, X_test, y_v, y_test = \
+            train_test_split(X, y, train_size=0.8, stratify=y)
+
+        X_train, X_vaild, y_train, y_vaild = \
+            train_test_split(X_v, y_v,
+                             train_size=0.9, stratify=y_v)
+
+        return X_train, X_test, y_train, y_test, X_vaild, y_vaild
 
     def training(self):
-        X_train, X_test, y_train, y_test = self.__loadCorpusAndTransform(
-            **self.segParams)
+        X_train, X_test, y_train, y_test, X_vaild, y_vaild = \
+            self.__loadCorpusAndTransform(**self.segParams)
 
         print(f'train dataset shape:{X_train.shape} {y_train.shape}')
+        print(f'vaild dataset shape:{X_vaild.shape} {y_vaild.shape}')
         print(f'test  dataset shape:{X_test.shape} {y_test.shape}')
 
         model = None
@@ -114,21 +122,31 @@ class nlp_model_training(nlp_frame):
 
         model.fit(X_train, y_train)
 
-        cv = cross_val_score(model, X_train, y_train,
-                             cv=5, scoring='accuracy').mean()
+        # cv = cross_val_score(model, X_train, y_train,
+        #                      cv=5, scoring='accuracy').mean()
+        # ----------------------------------------------------------------
+        y_train_pred = model.predict(X_train)
+        confusion_matrix_train = metrics.confusion_matrix(
+            y_train, y_train_pred)
+        accuracy_score_train = metrics.accuracy_score(y_train, y_train_pred)
+
+        y_vaild_pred = model.predict(X_vaild)
+        confusion_matrix_vaild = metrics.confusion_matrix(
+            y_vaild, y_vaild_pred)
+        accuracy_score_vaild = metrics.accuracy_score(y_vaild, y_vaild_pred)
 
         y_pred = model.predict(X_test)
+        accuracy_score_test = metrics.accuracy_score(y_test, y_pred)
+        confusion_matrix_test = metrics.confusion_matrix(y_test, y_pred)
 
-        accuracy_score = metrics.accuracy_score(y_test, y_pred)
-
-        confusion_matrix = metrics.confusion_matrix(y_test, y_pred)
-
-        return model, cv, accuracy_score, confusion_matrix
+        return (model, accuracy_score_train, confusion_matrix_train,
+                accuracy_score_vaild, confusion_matrix_vaild, accuracy_score_test, confusion_matrix_test)
 
 
 def ml_call(vectParams, segParams, modelSelect, modelParams, resultTimestamp):
     nmt = nlp_model_training(vectParams, segParams, modelSelect, modelParams)
-    model, cv, accuracy_score, confusion_matrix = nmt.training()
+    model, accuracy_score_train, confusion_matrix_train, accuracy_score_vaild, confusion_matrix_vaild,\
+        accuracy_score_test, confusion_matrix_test = nmt.training()
 
     dump(
         model, f'nlpModel_{modelSelect}/{resultTimestamp}.joblib')
@@ -141,8 +159,10 @@ def ml_call(vectParams, segParams, modelSelect, modelParams, resultTimestamp):
         f.write(temp)
     print(temp)
 
-    temp = f"\n{resultTimestamp}\ncross value:{cv:.3f}\naccuracy score:{accuracy_score:.3f}\n" +\
-        f"confusion matrix\n{confusion_matrix}\n" +\
+    temp = f"\n{resultTimestamp}\n" +\
+        f"accuracy score train:{accuracy_score_train:.3f}\nconfusion matrix train\n{confusion_matrix_train}\n" +\
+        f"accuracy score vaild:{accuracy_score_vaild:.3f}\nconfusion matrix vaild\n{confusion_matrix_vaild}\n" +\
+        f"accuracy score test:{accuracy_score_test:.3f}\nconfusion matrix test\n{confusion_matrix_test}\n" +\
         "-------------------------------------------------------------\n"
 
     with open(f"./info/{modelSelect}_modelScore.txt", 'a', encoding="utf-8") as f:
@@ -152,53 +172,56 @@ def ml_call(vectParams, segParams, modelSelect, modelParams, resultTimestamp):
 
 if __name__ == "__main__":
     # max_df min_df -> float in range [0.0, 1.0]
-    # nn = 1
-    # for corp in ("./corpus_words/corpus_new.xlsx", "./corpus_words/corpus.xlsx"):
-    #     for ste in range(1, 11):
-    #         for ma in range(ste, 11):
-    #             for mi in range(ma-ste, ma+1):
-    #                 for h, u in ((True, True), (True, False), (False, True), (False, False)):
-    #                     for b in (True, False):
-    #                         for fp in (True, False):
-    #                             for a in ("word", "char", "char_wb"):
-    #                                 try:
-    #                                     print(
-    #                                         f'***************iteration:{nn}***************')
-    #                                     resultTimestamp = f"{time.time()}"
+    start = time.time()
+    nnNB = 1
+    for corp in ("./corpus_words/corpus_new.xlsx", "./corpus_words/corpus.xlsx"):
+        for ste in range(1, 11):
+            for ma in range(ste, 11):
+                for mi in range(ma-ste, ma+1):
+                    for h, u in ((True, True), (True, False), (False, True), (False, False)):
+                        for b in (True, False):
+                            for fp in (True, False):
+                                for a in ("word", "char", "char_wb"):
+                                    try:
+                                        print(
+                                            f'***************iteration:{nnNB}***************')
+                                        resultTimestamp = f"{time.time()}"
 
-    #                                     vectParams = {
-    #                                         "analyzer": a,
-    #                                         "max_df": ma/10,
-    #                                         "min_df": mi/10,
-    #                                         "binary": b
-    #                                     }
+                                        vectParams = {
+                                            "analyzer": a,
+                                            "max_df": ma/10,
+                                            "min_df": mi/10,
+                                            "binary": b
+                                        }
 
-    #                                     segParams = {
-    #                                         "corpus": corp,
-    #                                         "HMM": h,
-    #                                         "use_paddle": u
-    #                                     }
+                                        segParams = {
+                                            "corpus": corp,
+                                            "HMM": h,
+                                            "use_paddle": u
+                                        }
 
-    #                                     modelSelect = "NB"
+                                        modelSelect = "NB"
 
-    #                                     # alpha:Additive (Laplace/Lidstone) smoothing parameter(0 for no smoothing).
-    #                                     # "fit_prior": bool, default = True Whether to learn class prior probabilities or not. If false, a uniform prior will be used.
-    #                                     modelParams = {
-    #                                         "alpha": 1.0,
-    #                                         "fit_prior": fp
-    #                                     }
+                                        # alpha:Additive (Laplace/Lidstone) smoothing parameter(0 for no smoothing).
+                                        # "fit_prior": bool, default = True Whether to learn class prior probabilities or not. If false, a uniform prior will be used.
+                                        modelParams = {
+                                            "alpha": 1.0,
+                                            "fit_prior": fp
+                                        }
 
-    #                                     ml_call(vectParams, segParams,
-    #                                             modelSelect, modelParams, resultTimestamp)
-    #                                 except Exception as e:
-    #                                     temp = f'\n{nn}\n{e}\n{resultTimestamp}\n{vectParams}\n{segParams}\n{modelSelect}\n{modelParams}'
-    #                                     with open('./info/err.txt', 'a', encoding='utf-8') as f:
-    #                                         f.write(temp)
-    #                                     print(temp)
-    #                                 nn += 1
+                                        ml_call(vectParams, segParams,
+                                                modelSelect, modelParams, resultTimestamp)
+                                    except Exception as e:
+                                        temp = f'\n{nnNB}\n{e}\n{resultTimestamp}\n{vectParams}\n{segParams}\n{modelSelect}\n{modelParams}'
+                                        with open('./info/err.txt', 'a', encoding='utf-8') as f:
+                                            f.write(temp)
+                                        print(temp)
+                                    nnNB += 1
+
+    end1 = time.time()
 
     # max_df min_df -> float in range [0.0, 1.0]
-    nn = 1
+    nnRF = 1
     for corp in ("./corpus_words/corpus_new.xlsx", "./corpus_words/corpus.xlsx"):
         for ste in range(1, 11):
             for ma in range(ste, 11):
@@ -214,12 +237,15 @@ if __name__ == "__main__":
                                                     for bootstrap, oob_scorebool, in ((True, True), (True, False), (False, False)):
                                                         for max_samples in range(1, 11):
                                                             for class_weight in (
-                                                                    {1: 14, 2: 15,
-                                                                     3: 9, 4: 3, 5: 2},
+                                                                    {
+                                                                        1: 7.5,
+                                                                        2: 9.5,
+                                                                        3: 2
+                                                                    },
                                                                     None, 'balanced', 'balanced_subsample'):
                                                                 try:
                                                                     print(
-                                                                        f'***************iteration:{nn}***************')
+                                                                        f'***************iteration:{nnRF}***************')
                                                                     resultTimestamp = f"{time.time()}"
 
                                                                     vectParams = {
@@ -254,9 +280,16 @@ if __name__ == "__main__":
                                                                     ml_call(vectParams, segParams,
                                                                             modelSelect, modelParams, resultTimestamp)
                                                                 except Exception as e:
-                                                                    temp = f'\n{nn}\n{e}\n{resultTimestamp}\n{vectParams}\n{segParams}\n{modelSelect}\n{modelParams}'
+                                                                    temp = f'\n{nnRF}\n{e}\n{resultTimestamp}\n{vectParams}\n{segParams}\n{modelSelect}\n{modelParams}'
                                                                     with open('./info/err.txt', 'a', encoding='utf-8') as f:
                                                                         f.write(
                                                                             temp)
                                                                     print(temp)
-                                                                nn += 1
+                                                                nnRF += 1
+    end2 = time.time()
+
+    print(f'NB time:{(end1-start):.3f}')
+    print(f'NB iternations:{nnNB}')
+
+    print(f'RF time:{(end2-end1):.3f}')
+    print(f'RF iternations:{nnRF}')

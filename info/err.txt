@@ -1,0 +1,1226 @@
+
+49
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272833.49616
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+50
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272833.7099063
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+51
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272833.9555783
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+52
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272834.3260791
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+53
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272834.6115851
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+54
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272834.8290138
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+55
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272835.179022
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+56
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272835.4606256
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+57
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272835.76715
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+58
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272835.9550626
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+59
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272836.122469
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+60
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272836.2857845
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+61
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272836.4617686
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+62
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272836.608202
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+63
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272836.7641456
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+64
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272836.9337125
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+65
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272837.0918999
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+66
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272837.3031147
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+67
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272837.471641
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+68
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272837.6173003
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+69
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272837.7690387
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+70
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272837.9419608
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+71
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272838.09504
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+72
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272838.2556272
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+73
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272838.4284577
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+74
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272838.572428
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+75
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272838.7728143
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+76
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272838.9401975
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+77
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272839.1047692
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+78
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272839.271731
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+79
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272839.4467854
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+80
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272839.597161
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+81
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272839.7630882
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+82
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272839.9491825
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+83
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272840.1754878
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+84
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272840.4374735
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+85
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272840.7005515
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+86
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272840.8584285
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+87
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272841.0843468
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+88
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272841.3463368
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+89
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272841.5330107
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+90
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272841.723523
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+91
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272841.9053962
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+92
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272842.072025
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+93
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272842.3215923
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+94
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272842.5026808
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+95
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272842.6543534
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+96
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272842.8079581
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.1, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+145
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272854.3457613
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+146
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272854.5143197
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+147
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272854.6843357
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+148
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272854.936028
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+149
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272855.2423227
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+150
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272855.4086592
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+151
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272855.59454
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+152
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272855.8348749
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+153
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272856.044151
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+154
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272856.2457085
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+155
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272856.4010463
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+156
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272856.5574017
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+157
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272856.7380044
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+158
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272856.9413526
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+159
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272857.2418737
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+160
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272857.5026455
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+161
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272857.6645417
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+162
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272857.8486576
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+163
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272858.0519748
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+164
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272858.2353017
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+165
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272858.4508524
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+166
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272858.6334598
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+167
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272858.7854095
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+168
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272858.998389
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+169
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272859.1743412
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+170
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272859.3180513
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+171
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272859.4745257
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+172
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272859.641544
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+173
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272859.78388
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+174
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272859.941119
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+175
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272860.1292188
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+176
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272860.2803655
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+177
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272860.437072
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+178
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272860.6583495
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+179
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272860.8026264
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+180
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272860.9636965
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+181
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272861.1446154
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+182
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272861.2944996
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+183
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272861.4546227
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+184
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272861.6287963
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+185
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272861.7790933
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+186
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272861.942474
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+187
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272862.1708593
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+188
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272862.3173792
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+189
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272862.4734614
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+190
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272862.638065
+{'analyzer': 'word', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+191
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272862.7848914
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+192
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272862.9384997
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+193
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272863.1152308
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+196
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272863.7015285
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+199
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272864.3575242
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+202
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272864.9617903
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+217
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272868.29334
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+220
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272868.884732
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.2, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+223
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272869.5989645
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+226
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272870.2791178
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.2, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+241
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272873.8276768
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+242
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272874.097202
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+243
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272874.3073182
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+244
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272874.5491533
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+245
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272874.7394955
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+246
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272874.909351
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+247
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272875.121944
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+248
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272875.344212
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+249
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272875.5495646
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+250
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272875.7946384
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+251
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272875.9498913
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+252
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272876.113028
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+253
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272876.2890499
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+254
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272876.4333944
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+255
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272876.5960054
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+256
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272876.7640247
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+257
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272876.9203966
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+258
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272877.084182
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+259
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272877.264969
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+260
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272877.4727292
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+261
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272877.7301161
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+262
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272877.961706
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+263
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272878.138969
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+264
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272878.3012996
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+265
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272878.4786198
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+266
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272878.630346
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+267
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272878.784863
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+268
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272879.0068383
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+269
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272879.164128
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+270
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272879.3205695
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+271
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272879.4875312
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+272
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272879.6356583
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+273
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272879.7913475
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+274
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272879.9676266
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+275
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272880.1308022
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+276
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272880.3323312
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+277
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272880.5405848
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+278
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272880.6972864
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+279
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272880.931779
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+280
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272881.181598
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+281
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272881.3545024
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+282
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272881.5185256
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+283
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272881.6948073
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+284
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272881.8427908
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+285
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272881.998172
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+286
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272882.1866832
+{'analyzer': 'word', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+287
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272882.3850262
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+288
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272882.5358455
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+301
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272885.5544775
+{'analyzer': 'word', 'max_df': 0.4, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+304
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272886.1733968
+{'analyzer': 'word', 'max_df': 0.4, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+307
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272886.9886527
+{'analyzer': 'word', 'max_df': 0.4, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+310
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272887.6204119
+{'analyzer': 'word', 'max_df': 0.4, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+325
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272891.5399592
+{'analyzer': 'word', 'max_df': 0.4, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+328
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272892.7938154
+{'analyzer': 'word', 'max_df': 0.4, 'min_df': 0.3, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+331
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272893.568315
+{'analyzer': 'word', 'max_df': 0.4, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+334
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272895.0928564
+{'analyzer': 'word', 'max_df': 0.4, 'min_df': 0.3, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': False, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+337
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272896.5239983
+{'analyzer': 'word', 'max_df': 0.4, 'min_df': 0.4, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+338
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272896.7408166
+{'analyzer': 'char', 'max_df': 0.4, 'min_df': 0.4, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+339
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272896.9854527
+{'analyzer': 'char_wb', 'max_df': 0.4, 'min_df': 0.4, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+340
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272897.183569
+{'analyzer': 'word', 'max_df': 0.4, 'min_df': 0.4, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+341
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272897.3949091
+{'analyzer': 'char', 'max_df': 0.4, 'min_df': 0.4, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+342
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272897.6196024
+{'analyzer': 'char_wb', 'max_df': 0.4, 'min_df': 0.4, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+343
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272898.022918
+{'analyzer': 'word', 'max_df': 0.4, 'min_df': 0.4, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+344
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272898.310928
+{'analyzer': 'char', 'max_df': 0.4, 'min_df': 0.4, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+345
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272898.5456204
+{'analyzer': 'char_wb', 'max_df': 0.4, 'min_df': 0.4, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+346
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272898.7372835
+{'analyzer': 'word', 'max_df': 0.4, 'min_df': 0.4, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+347
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272898.894277
+{'analyzer': 'char', 'max_df': 0.4, 'min_df': 0.4, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+348
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272899.0535998
+{'analyzer': 'char_wb', 'max_df': 0.4, 'min_df': 0.4, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': False}
+349
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272899.2548132
+{'analyzer': 'word', 'max_df': 0.4, 'min_df': 0.4, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+350
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272899.509211
+{'analyzer': 'char', 'max_df': 0.4, 'min_df': 0.4, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+351
+After pruning, no terms remain. Try a lower min_df or a higher max_df.
+1640272899.8490212
+{'analyzer': 'char_wb', 'max_df': 0.4, 'min_df': 0.4, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
