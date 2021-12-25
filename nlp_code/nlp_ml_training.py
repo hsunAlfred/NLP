@@ -150,7 +150,7 @@ if __name__ == "__main__":
     # max_df min_df -> float in range [0.0, 1.0]
     start = time.time()
     nnNB = 1
-    for corp in ("./corpus_words/corpus_new.xlsx", "./corpus_words/corpus.xlsx"):
+    for corp in ("./corpus_words/corpus_combine.xlsx", "./corpus_words/corpus.xlsx", "./corpus_words/corpus_new.xlsx"):
         for ste in range(1, 11):
             for ma in range(ste, 11):
                 for mi in range(ma-ste, ma+1):
@@ -198,7 +198,7 @@ if __name__ == "__main__":
 
     # max_df min_df -> float in range [0.0, 1.0]
     nnRF = 1
-    for corp in ("./corpus_words/corpus_new.xlsx", "./corpus_words/corpus.xlsx"):
+    for corp in ("./corpus_words/corpus_combine.xlsx", "./corpus_words/corpus.xlsx", "./corpus_words/corpus_new.xlsx"):
         for ste in range(1, 11):
             for ma in range(ste, 11):
                 for mi in range(ma-ste, ma+1):
