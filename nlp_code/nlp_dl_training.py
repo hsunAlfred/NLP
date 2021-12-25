@@ -186,7 +186,7 @@ if __name__ == "__main__":
         "corpus": './corpus_words/corpus_new1.xlsx',
         "HMM": True,
         "use_paddle": False,
-        "epochs": 10000
+        "epochs": 1000
     }
     model, nclasses, evaluate_loss, logits, pred, ty_test =\
         ndt.nlp_Bert_Build(**params)
