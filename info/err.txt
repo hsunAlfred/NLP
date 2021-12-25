@@ -1224,3 +1224,10 @@ After pruning, no terms remain. Try a lower min_df or a higher max_df.
 {'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
 NB
 {'alpha': 1.0, 'fit_prior': True}
+1
+[Errno 2] No such file or directory: 'nlpModel_RF/1640363177.8417876.joblib'
+1640363177.8417876
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+RF
+{'n_estimators': 5, 'criterion': 'gini', 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'auto', 'bootstrap': True, 'oob_score': True, 'max_samples': 0.1, 'class_weight': {1: 7.5, 2: 9.5, 3: 2}}

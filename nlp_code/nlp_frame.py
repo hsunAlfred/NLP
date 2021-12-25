@@ -2,7 +2,8 @@ import jieba
 import jieba.posseg as pseg
 import numpy as np
 import paddle
-
+import pathlib
+import pandas as pd
 
 class nlp_frame:
     def __init__(self) -> None:
@@ -35,6 +36,35 @@ class nlp_frame:
             trans.append(' '.join(temp))
 
         return np.array(trans)
+    
+    def loadCorpus(self, corpus: str, HMM: bool, use_paddle: bool):
+        corpusTarget = corpus.split('/')[-1].split('.')[0]
+
+        # load corpus(data)
+        # df = pd.read_csv(corpus, on_bad_lines='skip', encoding='utf-8')
+        if pathlib.Path(f'./corpus_words/seg_{corpusTarget}_{HMM}_{use_paddle}.xlsx').exists():
+            df = pd.read_excel(
+                f'./corpus_words/seg_{corpusTarget}_{HMM}_{use_paddle}.xlsx', usecols=['X', 'y']).dropna()
+        else:
+            df = pd.read_excel(corpus)
+
+            # Feature Engineering(feature to seg, label to category)
+
+            X = self.seg(
+                df["comment"], HMM=HMM, use_paddle=use_paddle)
+
+            # y = df["star"]
+            y = df["rate"]  # .apply(nlp_frame.toThreeClass)
+
+            df = pd.DataFrame([X, y], index=["X", 'y']).T.dropna()
+
+            df.to_excel(
+                f'./corpus_words/seg_{corpusTarget}_{HMM}_{use_paddle}.xlsx', index=False)
+
+            df = pd.read_excel(
+                f'./corpus_words/seg_{corpusTarget}_{HMM}_{use_paddle}.xlsx', usecols=['X', 'y']).dropna()
+        
+        return df
 
     @staticmethod
     def toThreeClass(x):

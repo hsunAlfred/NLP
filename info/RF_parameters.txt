@@ -1,0 +1,7 @@
+
+1640363186.922248
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+RF
+{'n_estimators': 5, 'criterion': 'gini', 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'auto', 'bootstrap': True, 'oob_score': True, 'max_samples': 0.1, 'class_weight': None}
+-------------------------------------------------------------

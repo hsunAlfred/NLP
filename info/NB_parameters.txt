@@ -1,0 +1,7 @@
+
+1640362811.0175393
+{'analyzer': 'word', 'max_df': 0.1, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------

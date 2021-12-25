@@ -1,3 +1,5 @@
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 import tensorflow as tf
 import tensorflow_hub as hub
 from nlp_frame import nlp_frame
@@ -11,7 +13,9 @@ class nlp_dl_training(nlp_frame):
         super().__init__()
         self.X_tokenizer = None
 
-    def __transTensor(self, nclasses, X_train, y_train=None, X_test=None, y_test=None):
+    def __transTensor(self, nclasses, X_train, y_train = None, 
+                                X_vaild = None, y_vaild=None, X_test=None, y_test=None):
+        
         # ------------------train data------------------------------
         X_temp = tf.constant([tuple(X_train)])
         tX_train = tf.transpose(X_temp)
@@ -29,7 +33,17 @@ class nlp_dl_training(nlp_frame):
         ty_train = tf.constant(tf.keras.utils.to_categorical(
             y_train, nclasses))
 
-        print(tX_train.shape, ty_train.shape)
+        print(f'train dataset shape: {tX_train.shape} {ty_train.shape}')
+
+        # ------------------vaild data------------------------------
+        X_temp = tf.constant([tuple(X_vaild)])
+        tX_vaild = tf.transpose(X_temp)
+
+        # 轉換為類別變數
+        ty_vaild = tf.constant(tf.keras.utils.to_categorical(
+            y_vaild, nclasses))
+
+        print(f'vaild dataset shape: {tX_vaild.shape} {ty_vaild.shape}')
 
         # ------------------test data------------------------------
         X_temp = tf.constant([tuple(X_test)])
@@ -39,9 +53,9 @@ class nlp_dl_training(nlp_frame):
         ty_test = tf.constant(tf.keras.utils.to_categorical(
             y_test, nclasses))
 
-        print(tX_test.shape, ty_test.shape)
+        print(f'test dataset shape: {tX_train.shape} {ty_train.shape}')
 
-        return tX_train, tX_test, ty_train, ty_test
+        return tX_train, ty_train, tX_vaild, ty_vaild, tX_test, ty_test
 
     def __transTensor2(self, nclasses, X_train, y_train=None, X_test=None, y_test=None):
         try:
@@ -92,40 +106,38 @@ class nlp_dl_training(nlp_frame):
 
         return tX_train, tX_test, ty_train, ty_test
 
-    def __loadCorpusAndTransform(self, corpus: str, HMM: bool, use_paddle: bool):
-        # load corpus(data)
-        df = pd.read_csv(corpus, on_bad_lines='skip', encoding='utf-8')
+    def __loadCorpusAndSplit(self, corpus: str, HMM: bool, use_paddle: bool):
+        df = self.loadCorpus(corpus, HMM, use_paddle)
 
-        # Feature Engineering(feature to seg, label to category)
-        X = self.seg(
-            df["comment"], HMM=HMM, use_paddle=use_paddle)
-
-        y = df["star"].apply(lambda x: int(x)-1)
-
-        df = pd.DataFrame([X, y], index=["X", 'y']).T.dropna()
+        X = df["X"]
+        y = df['y'].apply(lambda tem:tem-1)
 
         # 計算類別數量
-        nclasses = len(list(set(df["y"])))
+        nclasses = len(list(set(y)))
 
-        # split dataset
-        X_train, X_test, y_train, y_test = train_test_split(
-            df["X"], df["y"], test_size=0.2)
-        print(X_train.shape, y_train.shape)
-        print(X_test.shape, y_test.shape)
+        print(f"\n{X.shape}\n{y.shape}")
 
-        return X_train, X_test, y_train, y_test, nclasses
+        # split dataset, random_state should only set in test
+        X_v, X_test, y_v, y_test = \
+            train_test_split(X, y, train_size=0.8, stratify=y)
+        
+        X_train, X_vaild, y_train, y_vaild = \
+            train_test_split(X_v, y_v,
+                             train_size=0.75, stratify=y_v)
+
+        return X_train, y_train, X_vaild, y_vaild, X_test, y_test, nclasses
 
     def nlp_Bert_Build(self, corpus, HMM: bool, use_paddle: bool, epochs: int):
-        X_train, X_test, y_train, y_test, nclasses = \
-            self.__loadCorpusAndTransform(corpus, HMM, use_paddle)
+        X_train, y_train, X_vaild, y_vaild, X_test, y_test, nclasses = \
+            self.__loadCorpusAndSplit(corpus, HMM, use_paddle)
 
         # transform to tensor
         # x.shape, y.shape must to be (n, 1) (n, classes)
-        tX_train, tX_test, ty_train, ty_test = self.__transTensor(
-            nclasses, X_train, y_train, X_test, y_test)
+        tX_train, ty_train, tX_vaild, ty_vaild, tX_test, ty_test = self.__transTensor(
+            nclasses, X_train, y_train, X_vaild, y_vaild, X_test, y_test)
 
         bert = hub.KerasLayer(
-            'nlpModel_BERT/albert_large',
+            'corpus_words/albert_large',
             trainable=True,
             output_key='pooled_output'
         )
@@ -137,12 +149,12 @@ class nlp_dl_training(nlp_frame):
 
         model = tf.keras.Model(inputs=inputs, outputs=outputs)
         model.compile(loss='categorical_crossentropy')
-        model.fit(tX_train, ty_train, epochs=epochs, batch_size=100)
-
+        model.fit(tX_train, ty_train, epochs=epochs, batch_size=1000,)
+        
         tf.keras.utils.plot_model(model, to_file='model.png')
 
         evaluate_loss = model.evaluate(
-            tX_test, ty_test, batch_size=100, verbose=2)
+            tX_test, ty_test, batch_size=1000, verbose=2)
         logits = model.predict(tX_test)
         pred = logits.argmax(-1).tolist()
 
@@ -171,10 +183,10 @@ if __name__ == "__main__":
     start = time.time()
     ndt = nlp_dl_training()
     params = {
-        "corpus": 'comment_zh_tw.csv',
+        "corpus": './corpus_words/corpus_new1.xlsx',
         "HMM": True,
         "use_paddle": False,
-        "epochs": 500
+        "epochs": 10000
     }
     model, nclasses, evaluate_loss, logits, pred, ty_test =\
         ndt.nlp_Bert_Build(**params)

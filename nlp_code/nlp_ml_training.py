@@ -5,13 +5,12 @@ from sklearn.model_selection import cross_val_score
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
-import pandas as pd
+#import pandas as pd
 from joblib import dump
 from nlp_frame import nlp_frame
 from sklearn.feature_extraction.text import CountVectorizer
 # from sklearn.feature_extraction.text import HashingVectorizer
 import time
-import pathlib
 
 
 class nlp_model_training(nlp_frame):
@@ -59,32 +58,9 @@ class nlp_model_training(nlp_frame):
 
         # self.vect = HashingVectorizer(n_features=2**n)
 
-    def __loadCorpusAndTransform(self, corpus: str, HMM: bool, use_paddle: bool):
-        corpusTarget = corpus.split('/')[2].split('.')[0]
+    def __loadCorpusAndSplit(self, corpus: str, HMM: bool, use_paddle: bool):
+        df = self.loadCorpus(corpus, HMM, use_paddle)
 
-        # load corpus(data)
-        # df = pd.read_csv(corpus, on_bad_lines='skip', encoding='utf-8')
-        if pathlib.Path(f'./corpus_words/seg_{corpusTarget}_{HMM}_{use_paddle}.xlsx').exists():
-            df = pd.read_excel(
-                f'./corpus_words/seg_{corpusTarget}_{HMM}_{use_paddle}.xlsx', usecols=['X', 'y']).dropna()
-        else:
-            df = pd.read_excel(corpus)
-
-            # Feature Engineering(feature to seg, label to category)
-
-            X = self.seg(
-                df["comment"], HMM=HMM, use_paddle=use_paddle)
-
-            # y = df["star"]
-            y = df["rate"]  # .apply(nlp_frame.toThreeClass)
-
-            df = pd.DataFrame([X, y], index=["X", 'y']).T.dropna()
-
-            df.to_excel(
-                f'./corpus_words/seg_{corpusTarget}_{HMM}_{use_paddle}.xlsx', index=False)
-
-            df = pd.read_excel(
-                f'./corpus_words/seg_{corpusTarget}_{HMM}_{use_paddle}.xlsx', usecols=['X', 'y']).dropna()
         # BoW transform
         # -----------------------------------
         X = self.vect.fit_transform(df["X"]).toarray()
@@ -101,13 +77,13 @@ class nlp_model_training(nlp_frame):
 
         X_train, X_vaild, y_train, y_vaild = \
             train_test_split(X_v, y_v,
-                             train_size=0.9, stratify=y_v)
+                             train_size=0.75, stratify=y_v)
 
         return X_train, X_test, y_train, y_test, X_vaild, y_vaild
 
     def training(self):
         X_train, X_test, y_train, y_test, X_vaild, y_vaild = \
-            self.__loadCorpusAndTransform(**self.segParams)
+            self.__loadCorpusAndSplit(**self.segParams)
 
         print(f'train dataset shape:{X_train.shape} {y_train.shape}')
         print(f'vaild dataset shape:{X_vaild.shape} {y_vaild.shape}')
