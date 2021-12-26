@@ -7,7 +7,9 @@ __pycache__/
 *.so
 
 # Distribution / packaging
-nlpModel*/
+nlpModel_RF/
+nlpModel_BERT/
+nlpModel_LSTM/
 .Python
 build/
 develop-eggs/

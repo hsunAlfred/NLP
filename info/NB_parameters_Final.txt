@@ -1,0 +1,7 @@
+
+1640536039.7400753
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
