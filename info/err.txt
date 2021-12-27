@@ -1,0 +1,50 @@
+
+1
+[Errno 2] No such file or directory: 'nlpModel_RF/1640612283.6522105.joblib'
+1640612283.6522105
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+RF
+{'n_estimators': 5, 'criterion': 'gini', 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'auto', 'bootstrap': True, 'oob_score': True, 'max_samples': 0.1, 'class_weight': {1: 40, 2: 25, 3: 12, 4: 5, 5: 5}}
+2
+[Errno 2] No such file or directory: 'nlpModel_RF/1640612284.616519.joblib'
+1640612284.616519
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+RF
+{'n_estimators': 5, 'criterion': 'gini', 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'auto', 'bootstrap': True, 'oob_score': True, 'max_samples': 0.1, 'class_weight': None}
+3
+[Errno 2] No such file or directory: 'nlpModel_RF/1640612285.0336745.joblib'
+1640612285.0336745
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+RF
+{'n_estimators': 5, 'criterion': 'gini', 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'auto', 'bootstrap': True, 'oob_score': True, 'max_samples': 0.1, 'class_weight': 'balanced'}
+4
+[Errno 2] No such file or directory: 'nlpModel_RF/1640612285.4059176.joblib'
+1640612285.4059176
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+RF
+{'n_estimators': 5, 'criterion': 'gini', 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'auto', 'bootstrap': True, 'oob_score': True, 'max_samples': 0.1, 'class_weight': 'balanced_subsample'}
+5
+[Errno 2] No such file or directory: 'nlpModel_RF/1640612285.7508667.joblib'
+1640612285.7508667
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+RF
+{'n_estimators': 5, 'criterion': 'gini', 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'auto', 'bootstrap': True, 'oob_score': True, 'max_samples': 0.2, 'class_weight': {1: 40, 2: 25, 3: 12, 4: 5, 5: 5}}
+6
+[Errno 2] No such file or directory: 'nlpModel_RF/1640612286.2104616.joblib'
+1640612286.2104616
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+RF
+{'n_estimators': 5, 'criterion': 'gini', 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'auto', 'bootstrap': True, 'oob_score': True, 'max_samples': 0.2, 'class_weight': None}
+7
+[Errno 2] No such file or directory: 'nlpModel_RF/1640612286.7347121.joblib'
+1640612286.7347121
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+RF
+{'n_estimators': 5, 'criterion': 'gini', 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'auto', 'bootstrap': True, 'oob_score': True, 'max_samples': 0.2, 'class_weight': 'balanced'}

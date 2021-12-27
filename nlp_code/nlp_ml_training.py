@@ -147,44 +147,44 @@ def ml_call(vectParams, segParams, modelSelect, modelParams, resultTimestamp):
 
 
 if __name__ == "__main__":
-    start = time.time()
+    # start = time.time()
 
-    try:
-        resultTimestamp = f"{time.time()}"
+    # try:
+    #     resultTimestamp = f"{time.time()}"
 
-        vectParams = {
-            "analyzer": "char_wb",
-            "max_df": 0.8,
-            "min_df": 0.0,
-            "binary": False
-        }
+    #     vectParams = {
+    #         "analyzer": "char_wb",
+    #         "max_df": 0.8,
+    #         "min_df": 0.0,
+    #         "binary": False
+    #     }
 
-        segParams = {
-            "corpus": "./corpus_words/corpus_new.xlsx",
-            "HMM": True,
-            "use_paddle": False
-        }
+    #     segParams = {
+    #         "corpus": "./corpus_words/corpus_new.xlsx",
+    #         "HMM": True,
+    #         "use_paddle": False
+    #     }
 
-        modelSelect = "NB"
+    #     modelSelect = "NB"
 
-        # alpha:Additive (Laplace/Lidstone) smoothing parameter(0 for no smoothing).
-        # "fit_prior": bool, default = True Whether to learn class prior probabilities or not. If false, a uniform prior will be used.
-        modelParams = {
-            "alpha": 1.0,
-            "fit_prior": True
-        }
+    #     # alpha:Additive (Laplace/Lidstone) smoothing parameter(0 for no smoothing).
+    #     # "fit_prior": bool, default = True Whether to learn class prior probabilities or not. If false, a uniform prior will be used.
+    #     modelParams = {
+    #         "alpha": 1.0,
+    #         "fit_prior": True
+    #     }
 
-        ml_call(vectParams, segParams,
-                modelSelect, modelParams, resultTimestamp)
-    except Exception as e:
-        temp = f'\n{e}\n{resultTimestamp}\n{vectParams}\n{segParams}\n{modelSelect}\n{modelParams}'
-        with open('./info/err.txt', 'a', encoding='utf-8') as f:
-            f.write(temp)
-        print(temp)
+    #     ml_call(vectParams, segParams,
+    #             modelSelect, modelParams, resultTimestamp)
+    # except Exception as e:
+    #     temp = f'\n{e}\n{resultTimestamp}\n{vectParams}\n{segParams}\n{modelSelect}\n{modelParams}'
+    #     with open('./info/err.txt', 'a', encoding='utf-8') as f:
+    #         f.write(temp)
+    #     print(temp)
 
-    end1 = time.time()
+    # end1 = time.time()
 
-    print(f'NB time:{(end1-start):.3f}')
+    # print(f'NB time:{(end1-start):.3f}')
     # max_df min_df -> float in range [0.0, 1.0]
     # start = time.time()
     # nnNB = 1
@@ -231,69 +231,67 @@ if __name__ == "__main__":
     # end1 = time.time()
 
     # # max_df min_df -> float in range [0.0, 1.0]
-    # nnRF = 1
-    # for ma in range(1, 11):
-    #     for h, u in ((True, True), (True, False)):
-    #         for b in (True, False):
-    #             for a in ("char", "char_wb"):
-    #                 for n_estimators in range(5, 101, 5):
-    #                     for criterion in ("gini", "entropy"):
-    #                         for min_samples_split in range(2, 10):
-    #                             for min_samples_leafint in range(1, 10):
-    #                                 for max_features in ("auto", "sqrt", "log2"):
-    #                                     for bootstrap, oob_scorebool, in ((True, True), (True, False), (False, False)):
-    #                                         for max_samples in range(1, 11):
-    #                                             for class_weight in (
-    #                                                     {
-    #                                                         1: 7.5,
-    #                                                         2: 9.5,
-    #                                                         3: 2
-    #                                                     },
-    #                                                     None, 'balanced', 'balanced_subsample'):
-    #                                                 try:
-    #                                                     print(
-    #                                                         f'***************iteration:{nnRF}***************')
-    #                                                     resultTimestamp = f"{time.time()}"
+    nnRF = 1
+    for n_estimators in range(5, 101, 5):
+        for criterion in ("gini", "entropy"):
+            for min_samples_split in range(2, 10):
+                for min_samples_leafint in range(1, 10):
+                    for max_features in ("auto", "sqrt", "log2"):
+                        for bootstrap, oob_scorebool, in ((True, True), (True, False), (False, False)):
+                            for max_samples in range(1, 11):
+                                for class_weight in (
+                                        {
+                                            1: 40,
+                                            2: 25,
+                                            3: 12,
+                                            4: 5,
+                                            5: 5
+                                        },
+                                        None, 'balanced', 'balanced_subsample'):
+                                    try:
+                                        print(
+                                            f'***************iteration:{nnRF}***************')
+                                        resultTimestamp = f"{time.time()}"
 
-    #                                                     vectParams = {
-    #                                                         "analyzer": a,
-    #                                                         "max_df": ma,
-    #                                                         "min_df": 0.0,
-    #                                                         "binary": b
-    #                                                     }
+                                        vectParams = {
+                                            "analyzer": "char_wb",
+                                            "max_df": 0.8,
+                                            "min_df": 0.0,
+                                            "binary": False
+                                        }
 
-    #                                                     segParams = {
-    #                                                         "corpus": "./corpus_words/corpus_new.xlsx",
-    #                                                         "HMM": h,
-    #                                                         "use_paddle": u
-    #                                                     }
+                                        segParams = {
+                                            "corpus": "./corpus_words/corpus_new.xlsx",
+                                            "HMM": True,
+                                            "use_paddle": False
+                                        }
 
-    #                                                     modelSelect = "RF"
+                                        modelSelect = "RF"
 
-    #                                                     # alpha:Additive (Laplace/Lidstone) smoothing parameter(0 for no smoothing).
-    #                                                     # "fit_prior": bool, default = True Whether to learn class prior probabilities or not. If false, a uniform prior will be used.
-    #                                                     modelParams = {
-    #                                                         "n_estimators": n_estimators,
-    #                                                         "criterion": criterion,
-    #                                                         "min_samples_split": min_samples_split,
-    #                                                         "min_samples_leaf": min_samples_leafint,
-    #                                                         "max_features": max_features,
-    #                                                         "bootstrap": bootstrap,
-    #                                                         "oob_score": oob_scorebool,
-    #                                                         "max_samples": max_samples/10,
-    #                                                         "class_weight": class_weight
-    #                                                     }
+                                        # alpha:Additive (Laplace/Lidstone) smoothing parameter(0 for no smoothing).
+                                        # "fit_prior": bool, default = True Whether to learn class prior probabilities or not. If false, a uniform prior will be used.
+                                        modelParams = {
+                                            "n_estimators": n_estimators,
+                                            "criterion": criterion,
+                                            "min_samples_split": min_samples_split,
+                                            "min_samples_leaf": min_samples_leafint,
+                                            "max_features": max_features,
+                                            "bootstrap": bootstrap,
+                                            "oob_score": oob_scorebool,
+                                            "max_samples": max_samples/10,
+                                            "class_weight": class_weight
+                                        }
 
-    #                                                     ml_call(vectParams, segParams,
-    #                                                             modelSelect, modelParams, resultTimestamp)
-    #                                                 except Exception as e:
-    #                                                     temp = f'\n{nnRF}\n{e}\n{resultTimestamp}\n{vectParams}\n{segParams}\n{modelSelect}\n{modelParams}'
-    #                                                     with open('./info/err.txt', 'a', encoding='utf-8') as f:
-    #                                                         f.write(
-    #                                                             temp)
-    #                                                     print(temp)
-    #                                                 nnRF += 1
-    # end2 = time.time()
+                                        ml_call(vectParams, segParams,
+                                                modelSelect, modelParams, resultTimestamp)
+                                    except Exception as e:
+                                        temp = f'\n{nnRF}\n{e}\n{resultTimestamp}\n{vectParams}\n{segParams}\n{modelSelect}\n{modelParams}'
+                                        with open('./info/err.txt', 'a', encoding='utf-8') as f:
+                                            f.write(
+                                                temp)
+                                        print(temp)
+                                    nnRF += 1
+    end2 = time.time()
 
     # print(f'NB time:{(end1-start):.3f}')
     # print(f'NB iternations:{nnNB}')
