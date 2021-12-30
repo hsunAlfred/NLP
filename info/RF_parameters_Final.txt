@@ -1,0 +1,7 @@
+
+1640870460.5283659
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+RF
+{'n_estimators': 95, 'criterion': 'entropy', 'min_samples_split': 7, 'min_samples_leaf': 1, 'max_features': 'auto', 'max_samples': 0.9, 'class_weight': 'balanced'}
+-------------------------------------------------------------

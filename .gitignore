@@ -7,8 +7,6 @@ __pycache__/
 *.so
 
 # Distribution / packaging
-info/RF_*
-nlpModel_RF/
 nlpModel_BERT/
 nlpModel_LSTM/
 .Python
