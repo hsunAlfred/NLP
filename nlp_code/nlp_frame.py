@@ -67,10 +67,11 @@ class nlp_frame:
         return df
 
     @staticmethod
-    def toThreeClass(x):
-        if x > + 4:
-            return 3
-        elif x == 3:
-            return 2
-        else:
-            return 1
+    def toThreeClass(xs):
+        for x in xs:
+            if x > + 4:
+                yield 3
+            elif x == 3:
+                yield 2
+            else:
+                yield 1
