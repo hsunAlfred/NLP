@@ -1,11 +1,12 @@
-import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-import tensorflow as tf
-import tensorflow_hub as hub
-from nlp_frame import nlp_frame
-import pandas as pd
-import time
 from sklearn.model_selection import train_test_split
+import time
+import pandas as pd
+from nlp_frame import nlp_frame
+import tensorflow_hub as hub
+import tensorflow as tf
+import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 
 class nlp_dl_training(nlp_frame):
@@ -14,9 +15,9 @@ class nlp_dl_training(nlp_frame):
         self.X_tokenizer = None
         self.max_seq_len = None
 
-    def __transTensor(self, nclasses, X_train, y_train = None, 
-                                X_vaild = None, y_vaild=None, X_test=None, y_test=None):
-        
+    def __transTensor(self, nclasses, X_train, y_train=None,
+                      X_vaild=None, y_vaild=None, X_test=None, y_test=None):
+
         # ------------------train data------------------------------
         X_temp = tf.constant([tuple(X_train)])
         tX_train = tf.transpose(X_temp)
@@ -54,13 +55,13 @@ class nlp_dl_training(nlp_frame):
         ty_test = tf.constant(tf.keras.utils.to_categorical(
             y_test, nclasses))
 
-        print(f'test dataset shape: {tX_train.shape} {ty_train.shape}')
+        print(f'test dataset shape: {tX_test.shape} {ty_test.shape}')
 
         return tX_train, ty_train, tX_vaild, ty_vaild, tX_test, ty_test
 
-    def __transTensor2(self, nclasses, X_train, y_train = None, 
-                                X_vaild = None, y_vaild=None, X_test=None, y_test=None):
-        
+    def __transTensor2(self, nclasses, X_train, y_train=None,
+                       X_vaild=None, y_vaild=None, X_test=None, y_test=None):
+
         try:
             if X_vaild.empty:
                 corpus = pd.concat([X_train])
@@ -69,7 +70,6 @@ class nlp_dl_training(nlp_frame):
                 corpus = pd.concat([X_train])
         else:
             corpus = pd.concat([X_train, X_vaild, X_test])
-
 
         # ------------------train data------------------------------
         if self.X_tokenizer == None:
@@ -94,7 +94,7 @@ class nlp_dl_training(nlp_frame):
             if X_vaild == None:
                 print(tX_train.shape)
                 return tX_train
-        
+
         # 轉換為類別變數
         ty_train = tf.constant(tf.keras.utils.to_categorical(
             y_train, nclasses))
@@ -125,13 +125,13 @@ class nlp_dl_training(nlp_frame):
 
         print(ty_test.shape, y_test.shape)
 
-        return self.max_seq_len, tX_train, ty_train, tX_vaild, ty_vaild, tX_test, ty_test
+        return tX_train, ty_train, tX_vaild, ty_vaild, tX_test, ty_test
 
     def __loadCorpusAndSplit(self, corpus: str, HMM: bool, use_paddle: bool):
         df = self.loadCorpus(corpus, HMM, use_paddle)
 
         X = df["X"]
-        y = df['y'].apply(lambda tem:tem-1)
+        y = df['y'].apply(lambda tem: tem-1)
 
         # 計算類別數量
         nclasses = len(list(set(y)))
@@ -141,7 +141,7 @@ class nlp_dl_training(nlp_frame):
         # split dataset, random_state should only set in test
         X_v, X_test, y_v, y_test = \
             train_test_split(X, y, train_size=0.8, stratify=y)
-        
+
         X_train, X_vaild, y_train, y_vaild = \
             train_test_split(X_v, y_v,
                              train_size=0.75, stratify=y_v)
@@ -154,14 +154,14 @@ class nlp_dl_training(nlp_frame):
 
         # transform to tensor
         # x.shape, y.shape must to be (n, 1) (n, classes)
-        max_seq_len, tX_train, ty_train, tX_vaild, ty_vaild, tX_test, ty_test = self.__transTensor2(
+        tX_train, ty_train, tX_vaild, ty_vaild, tX_test, ty_test = self.__transTensor2(
             nclasses, X_train, y_train, X_vaild, y_vaild, X_test, y_test)
 
         # 輸入層
         top_input = tf.keras.Input(
-                shape=(max_seq_len,), 
-                dtype='int32'
-            )
+            shape=(self.max_seq_len,),
+            dtype='int32'
+        )
 
         # 詞嵌入層
         # 經過詞嵌入層的轉換，兩個新聞標題都變成一個詞向量的序列
@@ -177,7 +177,7 @@ class nlp_dl_training(nlp_frame):
 
         # 全連接層搭配 Softmax Activation
         # 可以回傳 5 個成對標題，屬於各類別的可能機率
-        dense =  tf.keras.layers.Dense(units=nclasses, activation='softmax')
+        dense = tf.keras.layers.Dense(units=nclasses, activation='softmax')
         predictions = dense(top_output)
 
         model = tf.keras.Model(inputs=top_input, outputs=predictions)
@@ -188,14 +188,14 @@ class nlp_dl_training(nlp_frame):
         )
 
         model.fit(
-            x=tX_train, 
+            x=tX_train,
             y=ty_train,
             batch_size=1000,
             epochs=epochs,
             validation_data=(tX_vaild, ty_vaild),
             shuffle=True
         )
-        
+
         # tf.keras.utils.plot_model(model, to_file='model.png')
 
         evaluate_loss = model.evaluate(
@@ -223,39 +223,76 @@ class nlp_dl_training(nlp_frame):
 
         return logits, pred
 
-    def nlp_Bert_Build(self, corpus, HMM: bool, use_paddle: bool, epochs: int):
-        X_train, y_train, X_vaild, y_vaild, X_test, y_test, nclasses = \
-            self.__loadCorpusAndSplit(corpus, HMM, use_paddle)
+    def nlp_Bert_Build(self, corpus, epochs: int):
+        df = pd.read_excel(corpus)
+
+        # Feature Engineering(feature to seg, label to category)
+
+        X = df["comment"]
+
+        y = df["rate"].apply(lambda tem: tem-1)
+
+        # 計算類別數量
+        nclasses = len(list(set(y)))
+
+        df = pd.DataFrame([X, y], index=["X", 'y']).T.dropna()
+
+        # split dataset, random_state should only set in test
+        X_v, X_test, y_v, y_test = \
+            train_test_split(X, y, train_size=0.8, stratify=y)
+
+        X_train, X_vaild, y_train, y_vaild = \
+            train_test_split(X_v, y_v,
+                             train_size=0.75, stratify=y_v)
 
         # transform to tensor
         # x.shape, y.shape must to be (n, 1) (n, classes)
         tX_train, ty_train, tX_vaild, ty_vaild, tX_test, ty_test = self.__transTensor(
             nclasses, X_train, y_train, X_vaild, y_vaild, X_test, y_test)
 
+        # 輸入層
+        inputs_bert = tf.keras.layers.Input(
+            shape=(None,),
+            dtype=tf.string
+        )
+
+        # bert layer
         bert = hub.KerasLayer(
             'corpus_words/albert_large',
             trainable=True,
             output_key='pooled_output'
         )
+        m = bert(inputs_bert)
 
-        inputs = tf.keras.layers.Input(shape=(None,), dtype=tf.string)
-        m = bert(inputs)
+        # 全連接層搭配 Softmax Activation
+        # 可以回傳 5 個成對標題，屬於各類別的可能機率
         m = tf.keras.layers.Masking()(m)
         outputs = tf.keras.layers.Dense(nclasses, activation='softmax')(m)
 
-        model = tf.keras.Model(inputs=inputs, outputs=outputs)
-        model.compile(loss='categorical_crossentropy')
-        model.fit(tX_train, ty_train, epochs=epochs, batch_size=1000, 
-            validation_data = (tX_vaild, ty_vaild))
-        
+        model = tf.keras.Model(inputs=inputs_bert, outputs=outputs)
+        model.compile(
+            optimizer='rmsprop',
+            loss='categorical_crossentropy',
+            metrics=['accuracy']
+        )
+
+        model.fit(
+            x=tX_train,
+            y=ty_train,
+            batch_size=1000,
+            epochs=epochs,
+            validation_data=(tX_vaild, ty_vaild),
+            shuffle=True
+        )
+
         # tf.keras.utils.plot_model(model, to_file='model.png')
 
-        evaluate_loss = model.evaluate(
-            tX_test, ty_test, batch_size=1000, verbose=2)
+        # evaluate_loss = model.evaluate(
+        #     tX_test, ty_test, batch_size=1000, verbose=2)
         logits = model.predict(tX_test)
         pred = logits.argmax(-1).tolist()
 
-        return model, nclasses, evaluate_loss, logits, pred, ty_test
+        return model, nclasses, logits, pred, y_test
 
     def nlp_Bert_Predict(self, model, nclasses, predictList, HMM, use_paddle):
         predictList = self.seg(
@@ -279,29 +316,36 @@ class nlp_dl_training(nlp_frame):
 if __name__ == "__main__":
     start = time.time()
     ndt = nlp_dl_training()
+    # params = {
+    #     "corpus": './corpus_words/corpus_new.xlsx',
+    #     "HMM": True,
+    #     "use_paddle": False,
+    #     "epochs": 3000
+    # }
     params = {
         "corpus": './corpus_words/corpus_new.xlsx',
-        "HMM": True,
-        "use_paddle": False,
-        "epochs": 3000
+        "epochs": 300
     }
+    model, nclasses, logits, pred, y_test =\
+        ndt.nlp_Bert_Build(**params)
     # model, nclasses, evaluate_loss, logits, pred, ty_test =\
-    #     ndt.nlp_Bert_Build(**params)
-    model, nclasses, evaluate_loss, logits, pred, ty_test =\
-        ndt.nlp_LSTM_Build(**params)
-    print(f'evaluate\n{evaluate_loss}\n')
+    #     ndt.nlp_LSTM_Build(**params)
+    print(logits)
+    print(pred)
+    print(
+        f'confusion matrix\n{tf.math.confusion_matrix(labels = y_test, predictions = pred)}')
 
-    params = {
-        "model": model,
-        "nclasses": nclasses,
-        "predictList": ["青椒難吃", "番茄好吃"],
-        "HMM": True,
-        "use_paddle": False
-    }
-    logits, pred = ndt.nlp_LSTM_Predict(**params)
+    # params = {
+    #     "model": model,
+    #     "nclasses": nclasses,
+    #     "predictList": ["青椒難吃", "番茄好吃"],
+    #     "HMM": True,
+    #     "use_paddle": False
+    # }
+    # logits, pred = ndt.nlp_LSTM_Predict(**params)
     # logits, pred = ndt.nlp_Bert_Predict(**params)
-    print(f'logits\n{logits}\n')
-    print(f'predict\n{pred}\n')
+    # print(f'logits\n{logits}\n')
+    # print(f'predict\n{pred}\n')
 
-    end = time.time()-start
-    print(f'{end:.3f}')
+    # end = time.time()-start
+    # print(f'{end:.3f}')
