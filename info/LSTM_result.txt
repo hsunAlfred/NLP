@@ -1,0 +1,13 @@
+Nonetrain
+confusion matrix
+[[185   0   2]
+ [  0 137   2]
+ [  0   0 967]]vaild
+confusion matrix
+[[ 39   5  18]
+ [ 10   9  27]
+ [  9  30 284]]test
+confusion matrix
+[[ 27  19  16]
+ [  8  19  20]
+ [ 12  16 295]]

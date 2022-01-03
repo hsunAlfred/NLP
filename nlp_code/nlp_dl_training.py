@@ -5,6 +5,8 @@ from nlp_frame import nlp_frame
 import tensorflow_hub as hub
 import tensorflow as tf
 import os
+from matplotlib import image as mpimg
+from matplotlib import pyplot as plt
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
@@ -127,11 +129,20 @@ class nlp_dl_training(nlp_frame):
 
         return tX_train, ty_train, tX_vaild, ty_vaild, tX_test, ty_test
 
+    def __threeClasses(self, y):
+        if y >= 4:
+            return 2
+        elif y == 3:
+            return 1
+        else:
+            return 0
+
     def __loadCorpusAndSplit(self, corpus: str, HMM: bool, use_paddle: bool):
         df = self.loadCorpus(corpus, HMM, use_paddle)
 
         X = df["X"]
-        y = df['y'].apply(lambda tem: tem-1)
+        # y = df['y'].apply(lambda tem: tem-1)
+        y = df['y'].apply(self.__threeClasses)
 
         # 計算類別數量
         nclasses = len(list(set(y)))
@@ -147,6 +158,19 @@ class nlp_dl_training(nlp_frame):
                              train_size=0.75, stratify=y_v)
 
         return X_train, y_train, X_vaild, y_vaild, X_test, y_test, nclasses
+
+    def __modelScore(self, model, tX_train, y_train, tX_vaild, y_vaild, tX_test, y_test):
+        pred = {}
+        logits = model.predict(tX_train)
+        pred["train"] = (logits.argmax(-1).tolist(), y_train)
+
+        logits = model.predict(tX_vaild)
+        pred["vaild"] = (logits.argmax(-1).tolist(), y_vaild)
+
+        logits = model.predict(tX_test)
+        pred["test"] = (logits.argmax(-1).tolist(), y_test)
+
+        return pred
 
     def nlp_LSTM_Build(self, corpus, HMM: bool, use_paddle: bool, epochs: int):
         X_train, y_train, X_vaild, y_vaild, X_test, y_test, nclasses = \
@@ -187,7 +211,7 @@ class nlp_dl_training(nlp_frame):
             metrics=['accuracy']
         )
 
-        model.fit(
+        history = model.fit(
             x=tX_train,
             y=ty_train,
             batch_size=1000,
@@ -196,14 +220,12 @@ class nlp_dl_training(nlp_frame):
             shuffle=True
         )
 
-        # tf.keras.utils.plot_model(model, to_file='model.png')
+        tf.keras.utils.plot_model(model, to_file='./info/model.png')
 
-        evaluate_loss = model.evaluate(
-            tX_test, ty_test, batch_size=1000, verbose=2)
-        logits = model.predict(tX_test)
-        pred = logits.argmax(-1).tolist()
+        pred = self.__modelScore(
+            model, tX_train, y_train, tX_vaild, y_vaild, tX_test, y_test)
 
-        return model, nclasses, evaluate_loss, logits, pred, ty_test
+        return model, nclasses, pred, history
 
     def nlp_LSTM_Predict(self, model, nclasses, predictList, HMM, use_paddle):
         predictList = self.seg(
@@ -287,12 +309,10 @@ class nlp_dl_training(nlp_frame):
 
         # tf.keras.utils.plot_model(model, to_file='model.png')
 
-        # evaluate_loss = model.evaluate(
-        #     tX_test, ty_test, batch_size=1000, verbose=2)
-        logits = model.predict(tX_test)
-        pred = logits.argmax(-1).tolist()
+        pred = self.__modelScore(
+            model, tX_train, y_train, tX_vaild, y_vaild, tX_test, y_test)
 
-        return model, nclasses, logits, pred, y_test
+        return model, nclasses, pred, history
 
     def nlp_Bert_Predict(self, model, nclasses, predictList, HMM, use_paddle):
         predictList = self.seg(
@@ -316,24 +336,37 @@ class nlp_dl_training(nlp_frame):
 if __name__ == "__main__":
     start = time.time()
     ndt = nlp_dl_training()
+
     # params = {
     #     "corpus": './corpus_words/corpus_new.xlsx',
-    #     "HMM": True,
-    #     "use_paddle": False,
-    #     "epochs": 3000
+    #     "epochs": 200
     # }
+
+    # model, nclasses, pred, history = ndt.nlp_Bert_Build(**params)
+
     params = {
         "corpus": './corpus_words/corpus_new.xlsx',
-        "epochs": 300
+        "HMM": True,
+        "use_paddle": False,
+        "epochs": 2
     }
-    model, nclasses, logits, pred, y_test =\
-        ndt.nlp_Bert_Build(**params)
-    # model, nclasses, evaluate_loss, logits, pred, ty_test =\
-    #     ndt.nlp_LSTM_Build(**params)
-    print(logits)
-    print(pred)
-    print(
-        f'confusion matrix\n{tf.math.confusion_matrix(labels = y_test, predictions = pred)}')
+    model, nclasses, pred, history = ndt.nlp_LSTM_Build(**params)
+
+    temp = {
+        "accuracy": history.history['accuracy'],
+        "val_accuracy": history.history['val_accuracy'],
+        "loss": history.history['loss'],
+        "val_loss": history.history['val_loss']
+    }
+    df = pd.DataFrame(temp)
+    df.to_csv('acc_los.csv')
+
+    res = str(model.summary())
+    for k, v in pred.items():
+        res += f'{k}\nconfusion matrix\n{tf.math.confusion_matrix(labels = v[1], predictions = v[0])}'
+
+    with open('info/LSTM_result.txt', 'w') as f:
+        f.write(res)
 
     # params = {
     #     "model": model,
