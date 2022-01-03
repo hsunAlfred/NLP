@@ -1,0 +1,16 @@
+None
+train
+confusion matrix
+[[  0   0 187]
+ [  0   0 140]
+ [  0   0 969]]
+vaild
+confusion matrix
+[[  0   0  62]
+ [  0   0  47]
+ [  0   0 324]]
+test
+confusion matrix
+[[  0   0  62]
+ [  0   0  47]
+ [  0   0 324]]

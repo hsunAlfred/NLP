@@ -1,13 +1,16 @@
-Nonetrain
+None
+train
 confusion matrix
-[[185   0   2]
- [  0 137   2]
- [  0   0 967]]vaild
+[[186   0   1]
+ [  0 138   1]
+ [  0   2 965]]
+vaild
 confusion matrix
-[[ 39   5  18]
- [ 10   9  27]
- [  9  30 284]]test
+[[ 39  10  13]
+ [  8  18  20]
+ [ 15  35 273]]
+test
 confusion matrix
-[[ 27  19  16]
- [  8  19  20]
- [ 12  16 295]]
+[[ 36  14  12]
+ [  9  16  22]
+ [ 20  33 270]]

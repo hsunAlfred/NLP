@@ -252,7 +252,7 @@ class nlp_dl_training(nlp_frame):
 
         X = df["comment"]
 
-        y = df["rate"].apply(lambda tem: tem-1)
+        y = df['y'].apply(self.__threeClasses)
 
         # 計算類別數量
         nclasses = len(list(set(y)))
@@ -298,7 +298,7 @@ class nlp_dl_training(nlp_frame):
             metrics=['accuracy']
         )
 
-        model.fit(
+        history = model.fit(
             x=tX_train,
             y=ty_train,
             batch_size=1000,
@@ -333,24 +333,26 @@ class nlp_dl_training(nlp_frame):
         return logits, pred
 
 
-if __name__ == "__main__":
+def main(mo="BERT"):
     start = time.time()
+
     ndt = nlp_dl_training()
 
-    # params = {
-    #     "corpus": './corpus_words/corpus_new.xlsx',
-    #     "epochs": 200
-    # }
+    if mo == "BERT":
+        params = {
+            "corpus": './corpus_words/corpus_new.xlsx',
+            "epochs": 200
+        }
 
-    # model, nclasses, pred, history = ndt.nlp_Bert_Build(**params)
-
-    params = {
-        "corpus": './corpus_words/corpus_new.xlsx',
-        "HMM": True,
-        "use_paddle": False,
-        "epochs": 2
-    }
-    model, nclasses, pred, history = ndt.nlp_LSTM_Build(**params)
+        model, nclasses, pred, history = ndt.nlp_Bert_Build(**params)
+    elif mo == "LSTM":
+        params = {
+            "corpus": './corpus_words/corpus_new.xlsx',
+            "HMM": True,
+            "use_paddle": False,
+            "epochs": 2
+        }
+        model, nclasses, pred, history = ndt.nlp_LSTM_Build(**params)
 
     temp = {
         "accuracy": history.history['accuracy'],
@@ -359,13 +361,13 @@ if __name__ == "__main__":
         "val_loss": history.history['val_loss']
     }
     df = pd.DataFrame(temp)
-    df.to_csv('acc_los.csv')
+    df.to_csv(f'./info/{mo}_acc_los.csv')
 
     res = str(model.summary())
     for k, v in pred.items():
         res += f'{k}\nconfusion matrix\n{tf.math.confusion_matrix(labels = v[1], predictions = v[0])}'
 
-    with open('info/LSTM_result.txt', 'w') as f:
+    with open(f'info/{mo}_result.txt', 'w') as f:
         f.write(res)
 
     # params = {
@@ -379,6 +381,9 @@ if __name__ == "__main__":
     # logits, pred = ndt.nlp_Bert_Predict(**params)
     # print(f'logits\n{logits}\n')
     # print(f'predict\n{pred}\n')
+    end = time.time()-start
+    print(f'{end:.3f}')
 
-    # end = time.time()-start
-    # print(f'{end:.3f}')
+
+if __name__ == "__main__":
+    main()
