@@ -1,0 +1,560 @@
+
+1641220573.2082593
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220594.060804
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220595.5227838
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220596.4367862
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220597.2777848
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220656.611983
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220657.6329856
+{'analyzer': 'char', 'max_df': 0.1, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220658.4419844
+{'analyzer': 'char_wb', 'max_df': 0.1, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220659.4359818
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220660.157984
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220660.9749844
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220661.7619808
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220662.591982
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220663.6329827
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220664.8959837
+{'analyzer': 'char', 'max_df': 0.2, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220665.9829848
+{'analyzer': 'char_wb', 'max_df': 0.2, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220666.8759856
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220667.6509855
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220668.4869814
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220669.4980469
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220670.3780444
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220671.103058
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220671.8670454
+{'analyzer': 'char', 'max_df': 0.3, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220672.5500448
+{'analyzer': 'char_wb', 'max_df': 0.3, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220673.4650502
+{'analyzer': 'char', 'max_df': 0.4, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220674.5570462
+{'analyzer': 'char_wb', 'max_df': 0.4, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220675.7770467
+{'analyzer': 'char', 'max_df': 0.4, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220676.628268
+{'analyzer': 'char_wb', 'max_df': 0.4, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220677.63729
+{'analyzer': 'char', 'max_df': 0.4, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220678.549285
+{'analyzer': 'char_wb', 'max_df': 0.4, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220679.8562913
+{'analyzer': 'char', 'max_df': 0.4, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220680.9673083
+{'analyzer': 'char_wb', 'max_df': 0.4, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220682.0803092
+{'analyzer': 'char', 'max_df': 0.5, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220683.034947
+{'analyzer': 'char_wb', 'max_df': 0.5, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220684.1309412
+{'analyzer': 'char', 'max_df': 0.5, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220685.0949461
+{'analyzer': 'char_wb', 'max_df': 0.5, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220686.0859444
+{'analyzer': 'char', 'max_df': 0.5, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220686.864942
+{'analyzer': 'char_wb', 'max_df': 0.5, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220687.838951
+{'analyzer': 'char', 'max_df': 0.5, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220688.747949
+{'analyzer': 'char_wb', 'max_df': 0.5, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220689.8839545
+{'analyzer': 'char', 'max_df': 0.6, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220690.7369487
+{'analyzer': 'char_wb', 'max_df': 0.6, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220691.6789434
+{'analyzer': 'char', 'max_df': 0.6, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220692.7049465
+{'analyzer': 'char_wb', 'max_df': 0.6, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220693.631967
+{'analyzer': 'char', 'max_df': 0.6, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220694.606982
+{'analyzer': 'char_wb', 'max_df': 0.6, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220695.522962
+{'analyzer': 'char', 'max_df': 0.6, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220696.3060088
+{'analyzer': 'char_wb', 'max_df': 0.6, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220697.2319646
+{'analyzer': 'char', 'max_df': 0.7, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220697.9819622
+{'analyzer': 'char_wb', 'max_df': 0.7, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220698.9759953
+{'analyzer': 'char', 'max_df': 0.7, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220699.8400385
+{'analyzer': 'char_wb', 'max_df': 0.7, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220700.6769633
+{'analyzer': 'char', 'max_df': 0.7, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220701.4199796
+{'analyzer': 'char_wb', 'max_df': 0.7, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220702.1959803
+{'analyzer': 'char', 'max_df': 0.7, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220702.879979
+{'analyzer': 'char_wb', 'max_df': 0.7, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220703.6539993
+{'analyzer': 'char', 'max_df': 0.8, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220704.5889835
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220705.2839837
+{'analyzer': 'char', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220706.0199845
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220706.790985
+{'analyzer': 'char', 'max_df': 0.8, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220707.4419827
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220708.2029805
+{'analyzer': 'char', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220709.0209796
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220709.9479795
+{'analyzer': 'char', 'max_df': 0.9, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220710.6490455
+{'analyzer': 'char_wb', 'max_df': 0.9, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220711.4319818
+{'analyzer': 'char', 'max_df': 0.9, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220712.1179821
+{'analyzer': 'char_wb', 'max_df': 0.9, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220712.92001
+{'analyzer': 'char', 'max_df': 0.9, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220713.6269794
+{'analyzer': 'char_wb', 'max_df': 0.9, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220714.5709825
+{'analyzer': 'char', 'max_df': 0.9, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220715.333009
+{'analyzer': 'char_wb', 'max_df': 0.9, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220716.0929973
+{'analyzer': 'char', 'max_df': 1.0, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220716.7709928
+{'analyzer': 'char_wb', 'max_df': 1.0, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220717.4829955
+{'analyzer': 'char', 'max_df': 1.0, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220718.1750271
+{'analyzer': 'char_wb', 'max_df': 1.0, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': True}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220719.1409936
+{'analyzer': 'char', 'max_df': 1.0, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220719.8529992
+{'analyzer': 'char_wb', 'max_df': 1.0, 'min_df': 0.0, 'binary': True}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220720.6499956
+{'analyzer': 'char', 'max_df': 1.0, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------
+
+1641220721.3389914
+{'analyzer': 'char_wb', 'max_df': 1.0, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new2.xlsx', 'HMM': True, 'use_paddle': False}
+NB
+{'alpha': 1.0, 'fit_prior': True}
+-------------------------------------------------------------

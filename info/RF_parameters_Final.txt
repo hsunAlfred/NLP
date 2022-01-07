@@ -1,7 +1,38 @@
+['1640695424.2473073',
+ "{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}",
+ "{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': "
+ 'False}',
+ 'RF',
+ "{'n_estimators': 65, 'criterion': 'gini', 'min_samples_split': 2, "
+ "'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_samples': 0.7, "
+ "'class_weight': 'balanced'}"]
 
-1640870460.5283659
-{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
-{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
-RF
-{'n_estimators': 95, 'criterion': 'entropy', 'min_samples_split': 7, 'min_samples_leaf': 1, 'max_features': 'auto', 'max_samples': 0.9, 'class_weight': 'balanced'}
--------------------------------------------------------------
+
+['1640697197.9246323',
+ "{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}",
+ "{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': "
+ 'False}',
+ 'RF',
+ "{'n_estimators': 65, 'criterion': 'gini', 'min_samples_split': 9, "
+ "'min_samples_leaf': 1, 'max_features': 'auto', 'max_samples': 0.4, "
+ "'class_weight': 'balanced_subsample'}"]
+
+
+['1640699328.4760685',
+ "{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}",
+ "{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': "
+ 'False}',
+ 'RF',
+ "{'n_estimators': 65, 'criterion': 'entropy', 'min_samples_split': 9, "
+ "'min_samples_leaf': 1, 'max_features': 'log2', 'max_samples': 0.9, "
+ "'class_weight': 'balanced_subsample'}"]
+
+
+['1640722879.2455149',
+ "{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}",
+ "{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': "
+ 'False}',
+ 'RF',
+ "{'n_estimators': 90, 'criterion': 'entropy', 'min_samples_split': 9, "
+ "'min_samples_leaf': 2, 'max_features': 'sqrt', 'max_samples': 0.5, "
+ "'class_weight': {1: 40, 2: 25, 3: 12, 4: 5, 5: 5}}"]

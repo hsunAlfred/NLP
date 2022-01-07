@@ -185,7 +185,7 @@ if __name__ == "__main__":
 
     # end1 = time.time()
 
-    print(f'NB time:{(end1-start):.3f}')
+    # print(f'NB time:{(end1-start):.3f}')
     # max_df min_df -> float in range [0.0, 1.0]
     start = time.time()
     nnNB = 1
@@ -206,7 +206,7 @@ if __name__ == "__main__":
                         }
 
                         segParams = {
-                            "corpus": "./corpus_words/corpus_new.xlsx",
+                            "corpus": "./corpus_words/corpus_new2.xlsx",
                             "HMM": h,
                             "use_paddle": u
                         }
@@ -221,7 +221,7 @@ if __name__ == "__main__":
                         }
 
                         ml_call(vectParams, segParams,
-                                modelSelect, modelParams, resultTimestamp)
+                                modelSelect, modelParams, resultTimestamp, dumpModel=False)
                     except Exception as e:
                         temp = f'\n{nnNB}\n{e}\n{resultTimestamp}\n{vectParams}\n{segParams}\n{modelSelect}\n{modelParams}'
                         with open('./info/err.txt', 'a', encoding='utf-8') as f:
@@ -261,7 +261,7 @@ if __name__ == "__main__":
                                     }
 
                                     segParams = {
-                                        "corpus": "./corpus_words/corpus_new.xlsx",
+                                        "corpus": "./corpus_words/corpus_new2.xlsx",
                                         "HMM": True,
                                         "use_paddle": False
                                     }
