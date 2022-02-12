@@ -11,7 +11,7 @@ from nlp_frame import nlp_frame
 from sklearn.feature_extraction.text import CountVectorizer
 # from sklearn.feature_extraction.text import HashingVectorizer
 import time
-
+from xgboost import XGBClassifier
 
 class nlp_model_training(nlp_frame):
     def __init__(self, vectParams: dict, segParams: dict, modelSelect: str, modelParams: dict) -> None:
@@ -46,6 +46,13 @@ class nlp_model_training(nlp_frame):
             "bootstrap":bool, default=True
             "oob_scorebool": bool, default=False, Only available if bootstrap=True.
             "class_weight":default=None, {“balanced”, “balanced_subsample”} [{0: 1, 1: 1}, {0: 1, 1: 5}, {0: 1, 1: 1}, {0: 1, 1: 1}]
+            
+            XG use, https://xgboost.readthedocs.io/en/stable/python/python_api.html#module-xgboost.sklearn
+            n_estimators: int,#總共迭代的次數，即決策樹的個數。預設值為100
+            max_depth: int,#樹的最大深度，默認值為6
+            booster: str,#Specify which booster to use: gbtree, gblinear or dart.
+            learning_rate: float,#學習速率，預設0.3
+            gamma: float,#懲罰項係數，指定節點分裂所需的最小損失函數下降值
         }
         '''
         super().__init__()
@@ -95,6 +102,8 @@ class nlp_model_training(nlp_frame):
             model = MultinomialNB(**self.modelParams)
         elif self.modelSelect == "RF":
             model = RandomForestClassifier(**self.modelParams)
+        elif self.modelSelect == "XG":
+            model = XGBClassifier(**self.modelParams)
 
         model.fit(X_train, y_train)
 
@@ -297,6 +306,38 @@ if __name__ == "__main__":
     # print(f'RF time:{(end2-end1):.3f}')
     # print(f'RF iternations:{nnRF}')
 
+#     try:
+#         resultTimestamp = f"{time.time()}"
+
+#         vectParams = {
+#             "analyzer": "char_wb",
+#             "max_df": 0.8,
+#             "min_df": 0.0,
+#             "binary": False
+#         }
+
+#         segParams = {
+#             "corpus": "./corpus_words/corpus_new.xlsx",
+#             "HMM": True,
+#             "use_paddle": False
+#         }
+
+#         modelSelect = "RF"
+
+#         # alpha:Additive (Laplace/Lidstone) smoothing parameter(0 for no smoothing).
+#         # "fit_prior": bool, default = True Whether to learn class prior probabilities or not. If false, a uniform prior will be used.
+#         modelParams = {
+#             "n_estimators": 65,
+#             "criterion": 'entropy',
+#             "min_samples_split": 9,
+#             "min_samples_leaf": 1,
+#             "max_features": 'log2',
+#             "max_samples": 0.9,
+#             "class_weight": 'balanced_subsample'
+#         }
+
+#         ml_call(vectParams, segParams,
+#                 modelSelect, modelParams, resultTimestamp, dumpModel=True)
     try:
         resultTimestamp = f"{time.time()}"
 
@@ -313,22 +354,20 @@ if __name__ == "__main__":
             "use_paddle": False
         }
 
-        modelSelect = "RF"
+        modelSelect = "XG"
 
         # alpha:Additive (Laplace/Lidstone) smoothing parameter(0 for no smoothing).
         # "fit_prior": bool, default = True Whether to learn class prior probabilities or not. If false, a uniform prior will be used.
         modelParams = {
-            "n_estimators": 65,
-            "criterion": 'entropy',
-            "min_samples_split": 9,
-            "min_samples_leaf": 1,
-            "max_features": 'log2',
-            "max_samples": 0.9,
-            "class_weight": 'balanced_subsample'
+            "n_estimators":100,
+            "max_depth": 10,
+            "booster": "dart",#Specify which booster to use: gbtree, gblinear or dart.
+            "learning_rate": 0.3,#學習速率，預設0.3。
+            "gpu_id" :0
         }
 
         ml_call(vectParams, segParams,
-                modelSelect, modelParams, resultTimestamp, dumpModel=True)
+                modelSelect, modelParams, resultTimestamp, dumpModel=False)
     except Exception as e:
         temp = f'\n{e}\n{resultTimestamp}\n{vectParams}\n{segParams}\n{modelSelect}\n{modelParams}'
         with open('./info/err.txt', 'a', encoding='utf-8') as f:

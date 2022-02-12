@@ -1,0 +1,169 @@
+
+[Errno 2] No such file or directory: 'nlpModel_XG/1644655461.8048851.joblib'
+1644655461.8048851
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 65, 'criterion': 'entropy', 'min_samples_split': 9, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_samples': 0.9, 'class_weight': 'balanced_subsample'}
+name 'n_estimators' is not defined
+1644655955.2343698
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 65, 'criterion': 'entropy', 'min_samples_split': 9, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_samples': 0.9, 'class_weight': 'balanced_subsample'}
+[09:02:00] ../src/gbm/gbm.cc:26: Unknown gbm type gbliner
+Stack trace:
+  [bt] (0) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17739d) [0x7f81b422339d]
+  [bt] (1) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17763a) [0x7f81b422363a]
+  [bt] (2) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b9f0a) [0x7f81b4265f0a]
+  [bt] (3) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b4739) [0x7f81b4260739]
+  [bt] (4) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(XGBoosterUpdateOneIter+0x68) [0x7f81b41454f8]
+  [bt] (5) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call_unix64+0x4c) [0x7f8252a4fdae]
+  [bt] (6) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call+0x22f) [0x7f8252a4f71f]
+  [bt] (7) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(_ctypes_callproc+0x2b4) [0x7f8252c635a4]
+  [bt] (8) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(+0x11c13) [0x7f8252c63c13]
+
+
+1644656520.322916
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 100, 'max_depth': 10, 'booster': 'gbliner', 'learning_rate': 0.3}
+[09:02:43] ../src/gbm/gbm.cc:26: Unknown gbm type gblinear 
+Stack trace:
+  [bt] (0) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17739d) [0x7f81b422339d]
+  [bt] (1) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17763a) [0x7f81b422363a]
+  [bt] (2) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b9f0a) [0x7f81b4265f0a]
+  [bt] (3) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b4739) [0x7f81b4260739]
+  [bt] (4) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(XGBoosterUpdateOneIter+0x68) [0x7f81b41454f8]
+  [bt] (5) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call_unix64+0x4c) [0x7f8252a4fdae]
+  [bt] (6) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call+0x22f) [0x7f8252a4f71f]
+  [bt] (7) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(_ctypes_callproc+0x2b4) [0x7f8252c635a4]
+  [bt] (8) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(+0x11c13) [0x7f8252c63c13]
+
+
+1644656563.1697028
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 100, 'max_depth': 10, 'booster': 'gblinear ', 'learning_rate': 0.3}
+[09:03:09] ../src/gbm/gbm.cc:26: Unknown gbm type gblinear 
+Stack trace:
+  [bt] (0) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17739d) [0x7fe855c6239d]
+  [bt] (1) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17763a) [0x7fe855c6263a]
+  [bt] (2) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b9f0a) [0x7fe855ca4f0a]
+  [bt] (3) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b4739) [0x7fe855c9f739]
+  [bt] (4) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(XGBoosterUpdateOneIter+0x68) [0x7fe855b844f8]
+  [bt] (5) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call_unix64+0x4c) [0x7fe8f44a3dae]
+  [bt] (6) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call+0x22f) [0x7fe8f44a371f]
+  [bt] (7) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(_ctypes_callproc+0x2b4) [0x7fe8f46b75a4]
+  [bt] (8) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(+0x11c13) [0x7fe8f46b7c13]
+
+
+1644656589.502917
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 100, 'max_depth': 10, 'booster': 'gblinear ', 'learning_rate': 0.3}
+[09:03:44] ../src/gbm/gbm.cc:26: Unknown gbm type dart 
+Stack trace:
+  [bt] (0) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17739d) [0x7fe855c6239d]
+  [bt] (1) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17763a) [0x7fe855c6263a]
+  [bt] (2) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b9f0a) [0x7fe855ca4f0a]
+  [bt] (3) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b4739) [0x7fe855c9f739]
+  [bt] (4) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(XGBoosterUpdateOneIter+0x68) [0x7fe855b844f8]
+  [bt] (5) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call_unix64+0x4c) [0x7fe8f44a3dae]
+  [bt] (6) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call+0x22f) [0x7fe8f44a371f]
+  [bt] (7) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(_ctypes_callproc+0x2b4) [0x7fe8f46b75a4]
+  [bt] (8) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(+0x11c13) [0x7fe8f46b7c13]
+
+
+1644656624.09284
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 100, 'max_depth': 10, 'booster': 'dart ', 'learning_rate': 0.3}
+[09:03:54] ../src/gbm/gbm.cc:26: Unknown gbm type dart 
+Stack trace:
+  [bt] (0) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17739d) [0x7fe855c6239d]
+  [bt] (1) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17763a) [0x7fe855c6263a]
+  [bt] (2) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b9f0a) [0x7fe855ca4f0a]
+  [bt] (3) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b4739) [0x7fe855c9f739]
+  [bt] (4) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(XGBoosterUpdateOneIter+0x68) [0x7fe855b844f8]
+  [bt] (5) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call_unix64+0x4c) [0x7fe8f44a3dae]
+  [bt] (6) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call+0x22f) [0x7fe8f44a371f]
+  [bt] (7) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(_ctypes_callproc+0x2b4) [0x7fe8f46b75a4]
+  [bt] (8) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(+0x11c13) [0x7fe8f46b7c13]
+
+
+1644656634.585012
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 100, 'max_depth': 10, 'booster': 'dart ', 'learning_rate': 0.3}
+[09:04:07] ../src/gbm/gbm.cc:26: Unknown gbm type dart 
+Stack trace:
+  [bt] (0) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17739d) [0x7fd6d8f6d39d]
+  [bt] (1) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17763a) [0x7fd6d8f6d63a]
+  [bt] (2) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b9f0a) [0x7fd6d8faff0a]
+  [bt] (3) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b4739) [0x7fd6d8faa739]
+  [bt] (4) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(XGBoosterUpdateOneIter+0x68) [0x7fd6d8e8f4f8]
+  [bt] (5) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call_unix64+0x4c) [0x7fd7777a1dae]
+  [bt] (6) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call+0x22f) [0x7fd7777a171f]
+  [bt] (7) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(_ctypes_callproc+0x2b4) [0x7fd7779b55a4]
+  [bt] (8) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(+0x11c13) [0x7fd7779b5c13]
+
+
+1644656647.6644704
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 100, 'max_depth': 10, 'booster': 'dart ', 'learning_rate': 0.3}
+[09:04:21] ../src/gbm/gbm.cc:26: Unknown gbm type gbtree 
+Stack trace:
+  [bt] (0) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17739d) [0x7fd6d8f6d39d]
+  [bt] (1) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17763a) [0x7fd6d8f6d63a]
+  [bt] (2) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b9f0a) [0x7fd6d8faff0a]
+  [bt] (3) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b4739) [0x7fd6d8faa739]
+  [bt] (4) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(XGBoosterUpdateOneIter+0x68) [0x7fd6d8e8f4f8]
+  [bt] (5) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call_unix64+0x4c) [0x7fd7777a1dae]
+  [bt] (6) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call+0x22f) [0x7fd7777a171f]
+  [bt] (7) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(_ctypes_callproc+0x2b4) [0x7fd7779b55a4]
+  [bt] (8) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(+0x11c13) [0x7fd7779b5c13]
+
+
+1644656661.4854317
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 100, 'max_depth': 10, 'booster': 'gbtree ', 'learning_rate': 0.3}
+[09:04:52] ../src/gbm/gbm.cc:26: Unknown gbm type gbtree 
+Stack trace:
+  [bt] (0) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17739d) [0x7f54ec55b39d]
+  [bt] (1) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x17763a) [0x7f54ec55b63a]
+  [bt] (2) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b9f0a) [0x7f54ec59df0a]
+  [bt] (3) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(+0x1b4739) [0x7f54ec598739]
+  [bt] (4) /home/keras/.local/lib/python3.6/site-packages/xgboost/lib/libxgboost.so(XGBoosterUpdateOneIter+0x68) [0x7f54ec47d4f8]
+  [bt] (5) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call_unix64+0x4c) [0x7f558ada6dae]
+  [bt] (6) /usr/lib/x86_64-linux-gnu/libffi.so.6(ffi_call+0x22f) [0x7f558ada671f]
+  [bt] (7) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(_ctypes_callproc+0x2b4) [0x7f558afba5a4]
+  [bt] (8) /usr/lib/python3.6/lib-dynload/_ctypes.cpython-36m-x86_64-linux-gnu.so(+0x11c13) [0x7f558afbac13]
+
+
+1644656692.3281686
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 100, 'max_depth': 10, 'booster': 'gbtree ', 'learning_rate': 0.3}
+name 'gpu_id' is not defined
+1644656898.5347075
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 100, 'max_depth': 10, 'booster': 'dart', 'learning_rate': 0.3}
+name 'gpu_id' is not defined
+1644656914.8548236
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 100, 'max_depth': 10, 'booster': 'dart', 'learning_rate': 0.3}

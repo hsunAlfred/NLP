@@ -1,0 +1,42 @@
+
+1644655542.6047242
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 65, 'criterion': 'entropy', 'min_samples_split': 9, 'min_samples_leaf': 1, 'max_features': 'log2', 'max_samples': 0.9, 'class_weight': 'balanced_subsample'}
+-------------------------------------------------------------
+
+1644656011.8551795
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 100, 'max_depth': 10, 'booster': 'gbtree', 'learning_rate': 0.3}
+-------------------------------------------------------------
+
+1644656716.0851955
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 100, 'max_depth': 10, 'booster': 'gblinear', 'learning_rate': 0.3}
+-------------------------------------------------------------
+
+1644656735.000518
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 100, 'max_depth': 10, 'booster': 'dart', 'learning_rate': 0.3}
+-------------------------------------------------------------
+
+1644656920.5219848
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 100, 'max_depth': 10, 'booster': 'gbtree', 'learning_rate': 0.3, 'gpu_id': 0}
+-------------------------------------------------------------
+
+1644656977.435214
+{'analyzer': 'char_wb', 'max_df': 0.8, 'min_df': 0.0, 'binary': False}
+{'corpus': './corpus_words/corpus_new.xlsx', 'HMM': True, 'use_paddle': False}
+XG
+{'n_estimators': 100, 'max_depth': 10, 'booster': 'gbtree', 'learning_rate': 0.3, 'gpu_id': 0}
+-------------------------------------------------------------
